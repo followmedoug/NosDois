@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed-dim": "#bec6e0",
+          "outline-variant": "#c0c9c0",
+          "on-surface-variant": "#404942",
+          "secondary-container": "#dae2fd",
+          "on-error": "#ffffff",
+          "surface-bright": "#f8f9ff",
+          "primary": "#003820",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "inverse-surface": "#213145",
+          "secondary": "#565e74",
+          "inverse-on-surface": "#eaf1ff",
+          "on-primary-fixed-variant": "#0f5132",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tertiary": "#1000a8",
+          "on-tertiary-fixed-variant": "#2f2ebe",
+          "outline": "#707971",
+          "surface-tint": "#2d6a48",
+          "on-primary-fixed": "#002111",
+          "on-tertiary": "#ffffff",
+          "on-secondary-fixed": "#131b2e",
+          "background": "#f8f9ff",
+          "primary-fixed-dim": "#95d4ac",
+          "surface-container-high": "#dce9ff",
+          "tertiary-container": "#2e2dbe",
+          "on-tertiary-container": "#abadff",
+          "on-error-container": "#93000a",
+          "tertiary-fixed": "#e1e0ff",
+          "surface-container": "#e5eeff",
+          "on-secondary-container": "#5c647a",
+          "inverse-primary": "#95d4ac",
+          "surface": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-fixed-dim": "#c0c1ff",
+          "primary-fixed": "#b0f1c7",
+          "on-secondary-fixed-variant": "#3f465c",
+          "on-primary-container": "#84c39b",
+          "secondary-fixed": "#dae2fd",
+          "surface-container-highest": "#d3e4fe",
+          "on-tertiary-fixed": "#07006c",
+          "surface-dim": "#cbdbf5",
+          "surface-variant": "#d3e4fe",
+          "surface-container-low": "#eff4ff",
+          "primary-container": "#0f5132",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "margin": "2rem",
+          "space-xl": "2.5rem",
+          "space-sm": "0.5rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-md": ["Plus Jakarta Sans"],
+          "currency-display": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "currency-display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 px-6 flex items-center gap-3"><img alt="NósDois Finanças Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VeEXrSZfPK19XuKdMzswwn-ERqOgALx9mVUNsPBO2dhc-Wu2uqIXncXQ9vB5o4G4Jqky_kukJQCPQkgBRB9B0ZB-jOWgNNkRoLLMqQlVcNw-rh3sPyHnI_nfTnldU58637zI9EOkC7OlzIitoNQ_wqzzKnHGSwI4BE_NlhArKMol0wOzbeDidNrzO874TFepupagtS5nqAPwj4P7EndKcX0Y32Ch8CRv9JPxXCX19G_oGTOZm51RAei4k"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">NósDois</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Finanças Compartilhadas</span></div></div><div class="px-4 py-2"><div class="p-3 rounded-xl bg-surface-container-lowest flex items-center gap-3 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-lg">diversity_1</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold">Lucas & Beatriz</span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Plano Duo Premium</span></div></div></div><div class="px-6 pt-4 pb-2"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Menu Principal</span></div><nav class="px-4 space-y-1 flex flex-col" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="despesas-receitas" href="#"><span class="material-symbols-outlined text-xl">receipt_long</span><span class="font-label-md text-label-md">Despesas & Receitas</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="carteiras-cartoes" href="#"><span class="material-symbols-outlined text-xl">account_balance_wallet</span><span class="font-label-md text-label-md">Carteiras & Cartões</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="metas-sonhos" href="#"><span class="material-symbols-outlined text-xl">savings</span><span class="font-label-md text-label-md">Metas & Sonhos</span></a><a aria-current="page" class="flex items-center gap-3.5 px-3.5 py-2.5 transition-all bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="planejamento-orcamento" href="#"><span class="material-symbols-outlined text-xl">pie_chart</span><span class="font-label-md text-label-md">Planejamento & Orçamento</span></a></nav></div><div class="p-4 flex flex-col gap-2"><div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary font-medium">Fechamento Mensal</span><span class="font-label-sm text-label-sm text-primary font-semibold">78%</span></div><div class="w-full h-1.5 rounded-full bg-outline-variant overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 78%"></div></div><span class="font-label-sm text-label-sm text-on-surface-variant">Orçamento sob controle</span></div><div class="flex items-center justify-between px-2 pt-2 text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">help_outline</span><span class="font-label-sm text-label-sm">Suporte do Casal</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">settings</span><span class="font-label-sm text-label-sm">Ajustes</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-8 flex items-center justify-between"><div class="flex items-center gap-4"><div class="bg-surface-container p-1 rounded-full flex items-center gap-1 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">join_inner</span>Visão Conjunta (NósDois)</button><button class="px-3.5 py-1.5 rounded-full text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium transition-all">Lucas</button><button class="px-3.5 py-1.5 rounded-full text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium transition-all">Beatriz</button></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold rounded-xl transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-lg">add</span><span>Nova Despesa / Receita</span></button><div class="h-6 w-px bg-outline-variant"></div><button class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lucas & Beatriz</span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Premium Ativo</span></div><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB1vnKOtX_iO5sUDmdfKAcIq_M1yYauB2WXtZ49aMFLhsgW6uKYiWwH1zQS3ionBlTITIDZ6kje1r2WK5K9kyC0J_yZADbkyh5rl3nMcZKUennrHSuWY5V0zqjy2LlejOWrv2NRu_pJ-y51kAyZs6APigOWVdjbS0SA4wBwlHjFksvGU6h4hfdMCvhCLCvJncpacsl8hXm75j-bJ-NmEyt38q4M5NDKlx_oxbsuwguCnctFvS4gRHYPw"/></div></div></header><main class="relative pt-20 flex-1 bg-surface w-full px-8 pb-16"><div class="flex flex-col w-full">
+<!-- Top Micro-Contextual Ribbon: Serene Confidence Metric -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-6 mb-8 shadow-sm">
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">balance</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">Diagnóstico Financeiro Proporcional</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">Sem Pesar no Bolso</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface tracking-tight mt-0.5">Capacidade de Gastos & Projeção Equitativa</p>
+</div>
+</div>
+<!-- Quick Switcher Mode Pills -->
+<div class="flex items-center p-1.5 rounded-xl bg-surface-container-lowest shadow-sm self-stretch lg:self-auto">
+<button class="flex-1 lg:flex-initial px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-2" id="btn-proporcional" onclick="switchBudgetModel('proporcional')">
+<span class="material-symbols-outlined text-base">pie_chart</span>
+<span>Modelo Proporcional (55/45)</span>
+</button>
+<button class="flex-1 lg:flex-initial px-4 py-2 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-2" id="btn-503020" onclick="switchBudgetModel('503020')">
+<span class="material-symbols-outlined text-base">auto_mode</span>
+<span>Regra 50 / 30 / 20</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Section: High Impact Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Card 1: Renda Líquida Conjunta -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Renda Líquida Total</span>
+<span class="material-symbols-outlined text-primary-container text-xl">payments</span>
+</div>
+<div class="font-currency-display text-currency-display text-on-surface tracking-tight">R$ 18.450</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">100% da capacidade do lar</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-3 py-2 rounded-lg">
+<span class="text-tertiary-container font-semibold">Lucas: R$ 10.200 (55%)</span>
+<span class="text-secondary font-semibold">Beatriz: R$ 8.250 (45%)</span>
+</div>
+</div>
+<!-- Card 2: Custos Fixos Essenciais -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Despesas Fixas Essenciais</span>
+<span class="material-symbols-outlined text-secondary text-xl">home_work</span>
+</div>
+<div class="font-currency-display text-currency-display text-primary tracking-tight">R$ 6.200</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">33.6% da renda (Excelente nível)</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-3 py-2 rounded-lg">
+<span>Aluguel, contas & mercado</span>
+<span class="text-primary font-bold">Quitado p/ dia 10</span>
+</div>
+</div>
+<!-- Card 3: Reserva & Metas -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Guardar & Investir / Mês</span>
+<span class="material-symbols-outlined text-primary-container text-xl">trending_up</span>
+</div>
+<div class="font-currency-display text-currency-display text-on-surface tracking-tight">R$ 6.000</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">32.5% p/ Sonhos & Futuro</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-3 py-2 rounded-lg">
+<span class="text-primary font-semibold">Metas: R$ 3.250</span>
+<span class="text-secondary font-semibold">Futuro: R$ 2.750</span>
+</div>
+</div>
+<!-- Card 4: Folga Anti-Estresse -->
+<div class="bg-primary-container text-on-primary rounded-xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-semibold">Folga Anti-Estresse</span>
+<span class="material-symbols-outlined text-primary-fixed text-xl">verified_user</span>
+</div>
+<div class="font-currency-display text-currency-display text-white tracking-tight">R$ 2.200</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-1">11.9% de margem p/ imprevisíveis</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between font-label-sm text-label-sm bg-black/20 px-3 py-2 rounded-lg">
+<span class="text-primary-fixed">Índice de Serenidade</span>
+<span class="text-white font-bold">94 / 100</span>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Dashboard Grid: Dual Streams (8 Cols) & Stress-Test Simulation (4 Cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
+<!-- Primary Flow: "Quanto Cada Um Pode Gastar Livremente" (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Header of the Allocation Engine -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Distribuição por Pessoa</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">O Quanto Cada Um Pode Gastar Sem Culpa</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-3">Lucas (55%)</span>
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Beatriz (45%)</span>
+</div>
+</div>
+<!-- Integrated Partner Comparison Columns -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Column Lucas -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm">
+                  L
+                </div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lucas</h3>
+<span class="font-label-sm text-label-sm text-secondary">Renda: R$ 10.200,00</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-tertiary font-label-sm text-label-sm font-semibold shadow-sm">Quota: 55%</span>
+</div>
+<!-- Pocket breakdowns for Lucas -->
+<div class="space-y-4 my-2">
+<!-- Pocket 1: Gasto Livre -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">local_cafe</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Gasto Livre Pessoal</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary" id="lucas-free">R$ 2.200</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 21.5%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Hobbies, games, happy hours</span>
+<span class="font-semibold text-primary">Sem prestação de contas</span>
+</div>
+</div>
+<!-- Pocket 2: Metas de Curto/Médio Prazo -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base">beach_access</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Metas Conjuntas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Viagem Japão + Troca de Carro</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="lucas-metas">R$ 1.800</span>
+</div>
+<!-- Pocket 3: Investimentos Futuro -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base">savings</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Previdência & Tesouro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Patrimônio independente</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="lucas-invest">R$ 1.500</span>
+</div>
+<!-- Pocket 4: Parcela Custos Fixos -->
+<div class="p-3.5 rounded-xl bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant text-base">real_estate_agent</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Cota Despesas Fixas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">55% dos R$ 6.200 do casal</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="lucas-fixo">R$ 3.410</span>
+</div>
+</div>
+<!-- Total validation -->
+<div class="pt-4 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Soma dos destinos:</span>
+<span class="text-on-surface font-bold">R$ 10.200,00 (100% alocado)</span>
+</div>
+</div>
+<!-- Column Beatriz -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm">
+                  B
+                </div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Beatriz</h3>
+<span class="font-label-sm text-label-sm text-secondary">Renda: R$ 8.250,00</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm">Quota: 45%</span>
+</div>
+<!-- Pocket breakdowns for Beatriz -->
+<div class="space-y-4 my-2">
+<!-- Pocket 1: Gasto Livre -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">spa</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Gasto Livre Pessoal</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary" id="bia-free">R$ 1.850</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 22.4%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Cuidado pessoal, livros, moda</span>
+<span class="font-semibold text-primary">Autonomia total</span>
+</div>
+</div>
+<!-- Pocket 2: Metas de Curto/Médio Prazo -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base">beach_access</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Metas Conjuntas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Viagem Japão + Troca de Carro</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="bia-metas">R$ 1.450</span>
+</div>
+<!-- Pocket 3: Investimentos Futuro -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base">savings</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Previdência & Ações</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Patrimônio individual</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="bia-invest">R$ 1.250</span>
+</div>
+<!-- Pocket 4: Parcela Custos Fixos -->
+<div class="p-3.5 rounded-xl bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant text-base">real_estate_agent</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Cota Despesas Fixas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">45% dos R$ 6.200 do casal</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="bia-fixo">R$ 2.790</span>
+</div>
+</div>
+<!-- Total validation -->
+<div class="pt-4 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Soma dos destinos:</span>
+<span class="text-on-surface font-bold">R$ 8.250,00 (100% alocado)</span>
+</div>
+</div>
+</div>
+<!-- Joint Consolidated Bar Visualizer -->
+<div class="mt-8 pt-6 bg-surface-container-lowest">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Balanço Total NósDois (Consolidado R$ 18.450)</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Visão 360° da Casa</span>
+</div>
+<!-- Multi-segment visual bar -->
+<div class="w-full h-4 rounded-full bg-surface-container-high flex overflow-hidden shadow-inner">
+<div class="h-full bg-secondary transition-all" style="width: 33.6%;" title="Custos Fixos: R$ 6.200"></div>
+<div class="h-full bg-primary-container transition-all" style="width: 21.9%;" title="Gasto Livre Casal: R$ 4.050"></div>
+<div class="h-full bg-primary-fixed-dim transition-all" style="width: 17.6%;" title="Poupança Metas: R$ 3.250"></div>
+<div class="h-full bg-tertiary-container transition-all" style="width: 15.0%;" title="Investimentos Futuros: R$ 2.750"></div>
+<div class="h-full bg-outline-variant transition-all" style="width: 11.9%;" title="Reserva de Margem: R$ 2.200"></div>
+</div>
+<!-- Legend Bar -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-4 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Fixos: <strong>R$ 6.200</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>Livre: <strong>R$ 4.050</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span>
+<span>Metas: <strong>R$ 3.250</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span>Futuro: <strong>R$ 2.750</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span>Margem: <strong>R$ 2.200</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Strategy & Allocations in Accordance to Time Horizon -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">Onde Aplicar Sem Risco</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Direcionamento Prático do Dinheiro Guardado</h3>
+</div>
+<span class="material-symbols-outlined text-primary-container text-2xl">verified</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Bucket 1: Curto Prazo (Metas de até 1 ano) -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">Até 12 Meses</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">R$ 3.250 / mês</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">CDB 100% CDI ou Tesouro Selic</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Liquidez diária garantida pelo FGC. Ideal para as passagens da viagem e reserva emergencial de 6 meses do casal. Não oscila negativamente.
+              </p>
+</div>
+<div class="flex items-center gap-2 pt-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Rendimento estimado: +~0.88% ao mês</span>
+</div>
+</div>
+<!-- Bucket 2: Longo Prazo / Aposentadoria -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Acima de 5 Anos</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">R$ 2.750 / mês</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">Tesouro IPCA+ 2035 & ETFs Globais</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Protege contra a inflação e assegura poder de compra no futuro com juros reais compostos. Garante independência financeira sem depender do INSS.
+              </p>
+</div>
+<div class="flex items-center gap-2 pt-2 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-base">lock</span>
+<span>Rentabilidade travada acima da inflação</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Rail: Scenario Simulator & Anti-Stress Engine (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Interactive Scenario Simulator Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Simulador "E Se..."</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Tempo Real</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+          Ajuste as variações do mês para descobrir o reflexo exato na meta de investimentos sem gerar cobranças entre o casal.
+        </p>
+<!-- Slider 1: Almoço Fora / Lazer Extra -->
+<div class="mb-5">
+<div class="flex items-center justify-between font-label-md text-label-md mb-2">
+<span class="text-on-surface">Almoços fora & Lazer Extra</span>
+<span class="font-bold text-primary" id="slider-lazer-val">+ R$ 400</span>
+</div>
+<input class="w-full accent-primary-container h-2 bg-surface-container-high rounded-lg cursor-pointer" id="slider-lazer" max="1200" min="0" oninput="updateSimulation()" step="100" type="range" value="400"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-1">
+<span>R$ 0</span>
+<span>R$ 600</span>
+<span>+ R$ 1.200</span>
+</div>
+</div>
+<!-- Slider 2: Ajuste Imprevisto Casa/Condomínio -->
+<div class="mb-6">
+<div class="flex items-center justify-between font-label-md text-label-md mb-2">
+<span class="text-on-surface">Flutuação de Contas da Casa</span>
+<span class="font-bold text-secondary" id="slider-fixo-val">+ R$ 150</span>
+</div>
+<input class="w-full accent-secondary h-2 bg-surface-container-high rounded-lg cursor-pointer" id="slider-fixo" max="800" min="-300" oninput="updateSimulation()" step="50" type="range" value="150"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-1">
+<span>- R$ 300 (Economia)</span>
+<span>+ R$ 800</span>
+</div>
+</div>
+<!-- Impact Dynamic Display -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Impacto nos Sonhos do Casal</span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aporte p/ Viagem cai para:</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="res-meta-viagem">R$ 2.800</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Data da Viagem Japão:</span>
+<span class="font-label-md text-label-md text-error font-semibold" id="res-meses-viagem">+1 mês (Abril/2026)</span>
+</div>
+<div class="h-px bg-outline-variant my-1"></div>
+<div class="flex items-start gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">sentiment_satisfied</span>
+<span>Mesmo com o aumento de R$ 550 total, o orçamento continua <strong>100% saudável</strong> e sem aperto nos gastos essenciais.</span>
+</div>
+</div>
+</div>
+<!-- Thermometer of Marital Financial Well-Being -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Termômetro Anti-Estresse</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">favorite</span>
+</div>
+<!-- Gauge visual -->
+<div class="flex items-center gap-4 my-1">
+<div class="relative w-24 h-24 shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">88%</span>
+<span class="font-label-sm text-label-sm text-secondary">Serenidade</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">Zona Ultra Confortável</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Vocês comprometem menos de 35% com custos fixos. No padrão brasileiro, a média é 62%.
+            </p>
+</div>
+</div>
+<div class="space-y-2.5 pt-2">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Nenhum dos dois precisa pedir aval para compras até <strong>R$ 250</strong>.</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Divisão 55/45 garante que ambos guardem proporcionalmente o mesmo esforço.</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Reserva de segurança conjunta cobre <strong>8.4 meses</strong> de custos essenciais.</span>
+</div>
+</div>
+<!-- Quick Agreement Stamp -->
+<div class="mt-2 p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Acordo de Cavalheiros assinado</span>
+<span class="text-primary font-bold">Válido até Dez/2025</span>
+</div>
+</div>
+<!-- Compact Inspirational Note & Couple Photo Context -->
+<div class="relative rounded-xl overflow-hidden shadow-sm h-48 flex items-end p-5">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A modern happy young couple laughing together at an outdoor kitchen table over cups of artisan coffee, soft warm morning daylight streaming through leafy plants, minimal serene interior design with forest green and slate accents, cinematic high-end editorial photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXPRy4M9SE3x3G5z-GPg2E3j55KIHi8xTKhLC51oWLN58gEgzH-H_U6JBlkqCNdhr_OPIWXAGIbCm61LRMaPGiZXyZbmWHSjuCYtfsmMtYGHZbjEvSctFbjgon84j5Cteo0yIiPZ7g4kb2Xcnc_YU3r0V_zUJjircJAvY1caUfu1vGHMI6n6yOQbfqmvzq-AjHUrxTYZR43obO1scrxn_5iN1L1m39v5ftxjFgSDOoA6oxKSE-ZXOnpw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/40 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-semibold">Meta Principal Ativa</span>
+<p class="font-headline-sm text-headline-sm font-bold text-white">Viagem a dois: Tóquio & Kyoto</p>
+<p class="font-body-sm text-body-sm text-white/80">Meta de R$ 38.000 atingida em 74%.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro Interaction Script for Real-Time Recalculation -->
+<script>
+    function updateSimulation() {
+      const extraLazer = parseInt(document.getElementById('slider-lazer').value, 10);
+      const extraFixo = parseInt(document.getElementById('slider-fixo').value, 10);
+
+      document.getElementById('slider-lazer-val').innerText = '+ R$ ' + extraLazer;
+      document.getElementById('slider-fixo-val').innerText = (extraFixo >= 0 ? '+ ' : '') + 'R$ ' + extraFixo;
+
+      // Base: Metas R$ 3.250
+      const totalImpact = extraLazer + extraFixo;
+      const novoAporte = Math.max(1200, 3250 - totalImpact);
+      
+      document.getElementById('res-meta-viagem').innerText = 'R$ ' + novoAporte.toLocaleString('pt-BR');
+
+      const delayElement = document.getElementById('res-meses-viagem');
+      if (totalImpact <= 200) {
+        delayElement.innerText = 'Prazo mantido (Março/2026)';
+        delayElement.className = 'font-label-md text-label-md text-primary font-semibold';
+      } else if (totalImpact <= 600) {
+        delayElement.innerText = '+1 mês (Abril/2026)';
+        delayElement.className = 'font-label-md text-label-md text-error font-semibold';
+      } else {
+        delayElement.innerText = '+2 meses (Maio/2026)';
+        delayElement.className = 'font-label-md text-label-md text-error font-semibold';
+      }
+    }
+
+    function switchBudgetModel(model) {
+      const btnProp = document.getElementById('btn-proporcional');
+      const btn50 = document.getElementById('btn-503020');
+
+      if (model === '503020') {
+        btn50.className = 'flex-1 lg:flex-initial px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-2';
+        btnProp.className = 'flex-1 lg:flex-initial px-4 py-2 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-2';
+
+        // 50% Necessidades (R$ 9.225), 30% Estilo de Vida (R$ 5.535), 20% Investimentos (R$ 3.690)
+        document.getElementById('lucas-free').innerText = 'R$ 2.767';
+        document.getElementById('bia-free').innerText = 'R$ 2.768';
+        document.getElementById('lucas-fixo').innerText = 'R$ 3.100 (50/50)';
+        document.getElementById('bia-fixo').innerText = 'R$ 3.100 (50/50)';
+        document.getElementById('lucas-metas').innerText = 'R$ 1.200';
+        document.getElementById('bia-metas').innerText = 'R$ 1.200';
+        document.getElementById('lucas-invest').innerText = 'R$ 1.000';
+        document.getElementById('bia-invest').innerText = 'R$ 1.000';
+      } else {
+        btnProp.className = 'flex-1 lg:flex-initial px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-2';
+        btn50.className = 'flex-1 lg:flex-initial px-4 py-2 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-2';
+
+        // Restaura Proporcional 55 / 45
+        document.getElementById('lucas-free').innerText = 'R$ 2.200';
+        document.getElementById('bia-free').innerText = 'R$ 1.850';
+        document.getElementById('lucas-fixo').innerText = 'R$ 3.410';
+        document.getElementById('bia-fixo').innerText = 'R$ 2.790';
+        document.getElementById('lucas-metas').innerText = 'R$ 1.800';
+        document.getElementById('bia-metas').innerText = 'R$ 1.450';
+        document.getElementById('lucas-invest').innerText = 'R$ 1.500';
+        document.getElementById('bia-invest').innerText = 'R$ 1.250';
+      }
+    }
+  </script>
+</div></main><footer class="fixed bottom-0 left-72 right-0 h-10 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 px-8 flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary-container">lock</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sincronização bancária segura e criptografada (Open Finance Brasil)</span><span class="w-1.5 h-1.5 rounded-full bg-primary-container ml-1"></span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Atualizado há 4 min</span></div><div class="flex items-center gap-6"><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Auditoria Conjunta</span><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Exportar Relatório</span><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Privacidade 50/50</span></div></footer></div></body></html>

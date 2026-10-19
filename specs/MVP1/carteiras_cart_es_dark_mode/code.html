@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#001e2c",
+          "surface-container-low": "#131926",
+          "on-primary-fixed": "#002113",
+          "error": "#ffb4ab",
+          "outline": "#86948a",
+          "primary-container": "#10b981",
+          "tertiary-container": "#e29100",
+          "on-secondary-container": "#00374d",
+          "surface-container-lowest": "#0b0f17",
+          "on-primary-fixed-variant": "#005236",
+          "on-primary": "#003824",
+          "outline-variant": "#222c3d",
+          "on-tertiary-fixed-variant": "#653e00",
+          "inverse-on-surface": "#2c3039",
+          "on-surface": "#f1f5f9",
+          "error-container": "#93000a",
+          "tertiary": "#ffb95f",
+          "primary-fixed": "#6ffbbe",
+          "primary": "#4edea3",
+          "on-error": "#690005",
+          "surface-container-highest": "#283449",
+          "inverse-primary": "#006c49",
+          "on-tertiary": "#472a00",
+          "on-secondary": "#00354a",
+          "inverse-surface": "#dfe2ee",
+          "surface-tint": "#4edea3",
+          "on-secondary-fixed-variant": "#004c69",
+          "tertiary-fixed-dim": "#ffb95f",
+          "on-primary-container": "#00422b",
+          "secondary-fixed": "#c4e7ff",
+          "background": "#0b0f17",
+          "secondary": "#94a3b8",
+          "on-background": "#f1f5f9",
+          "surface-container-high": "#1e293b",
+          "secondary-container": "#0284c7",
+          "on-tertiary-container": "#523200",
+          "tertiary-fixed": "#ffddb8",
+          "surface-container": "#161f30",
+          "secondary-fixed-dim": "#7bd0ff",
+          "surface": "#0b0f17",
+          "on-error-container": "#ffdad6",
+          "primary-fixed-dim": "#4edea3",
+          "surface-variant": "#1e293b",
+          "surface-dim": "#0b0f17",
+          "on-tertiary-fixed": "#2a1700",
+          "surface-bright": "#353942",
+          "on-surface-variant": "#94a3b8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "2xl": "1rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-sm": "0.5rem",
+          "margin-tablet": "1.5rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "gutter-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter", "Plus Jakarta Sans"],
+          "body-md": ["Inter", "Plus Jakarta Sans"],
+          "body-lg": ["Inter", "Plus Jakarta Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "label-lg": ["Plus Jakarta Sans"],
+          "currency-display": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-sm": ["1.125rem", {"lineHeight": "1.5rem", "fontWeight": "600"}],
+          "headline-md": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+          "headline-lg": ["1.75rem", {"lineHeight": "2.25rem", "fontWeight": "700"}],
+          "headline-xl": ["2.25rem", {"lineHeight": "2.75rem", "fontWeight": "700"}],
+          "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+          "body-md": ["0.9375rem", {"lineHeight": "1.5rem", "fontWeight": "400"}],
+          "body-lg": ["1.125rem", {"lineHeight": "1.75rem", "fontWeight": "400"}],
+          "label-sm": ["0.6875rem", {"lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "label-md": ["0.75rem", {"lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "currency-display": ["2.25rem", {"lineHeight": "2.5rem", "fontWeight": "800"}]
+        }
+      }
+    }
+  };
+</script></head><body class="bg-[#0B0F17] font-body-md text-body-md text-on-surface antialiased selection:bg-primary/20 selection:text-primary"><aside class="fixed left-0 top-0 h-full w-72 bg-[#0F172A] border-r border-slate-800/80 z-50 flex flex-col justify-between shadow-2xl"><div class="flex flex-col"><div class="h-20 px-6 flex items-center gap-3 border-b border-slate-800/60"><img alt="NósDois Finanças Logo" class="h-8 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/AEtjO1VeEXrSZfPK19XuKdMzswwn-ERqOgALx9mVUNsPBO2dhc-Wu2uqIXncXQ9vB5o4G4Jqky_kukJQCPQkgBRB9B0ZB-jOWgNNkRoLLMqQlVcNw-rh3sPyHnI_nfTnldU58637zI9EOkC7OlzIitoNQ_wqzzKnHGSwI4BE_NlhArKMol0wOzbeDidNrzO874TFepupagtS5nqAPwj4P7EndKcX0Y32Ch8CRv9JPxXCX19G_oGTOZm51RAei4k"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">NósDois</span><span class="font-label-sm text-label-sm text-slate-400 font-medium">Finanças Compartilhadas</span></div></div><div class="px-4 py-3"><div class="p-3 rounded-xl bg-[#161F30] border border-slate-700/50 flex items-center gap-3 shadow-md"><div class="w-9 h-9 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-lg">diversity_1</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-white font-semibold">Lucas &amp; Beatriz</span><span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Plano Duo Premium</span></div></div></div><div class="px-6 pt-3 pb-2"><span class="font-label-sm text-label-sm text-slate-400 uppercase tracking-wider font-semibold">Menu Principal</span></div><nav class="px-4 space-y-1.5 flex flex-col" data-active-classes="bg-emerald-500 text-slate-950 font-semibold rounded-xl shadow-lg shadow-emerald-500/20"><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1E293B] hover:text-white transition-all" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-xl text-slate-400">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1E293B] hover:text-white transition-all" data-path="despesas-receitas" href="#"><span class="material-symbols-outlined text-xl text-slate-400">receipt_long</span><span class="font-label-md text-label-md">Despesas &amp; Receitas</span></a><a aria-current="page" class="flex items-center gap-3.5 px-3.5 py-2.5 transition-all bg-emerald-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-emerald-500/20" data-path="carteiras-cartoes" href="#"><span class="material-symbols-outlined text-xl text-slate-950">account_balance_wallet</span><span class="font-label-md text-label-md">Carteiras &amp; Cartões</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1E293B] hover:text-white transition-all" data-path="metas-sonhos" href="#"><span class="material-symbols-outlined text-xl text-slate-400">savings</span><span class="font-label-md text-label-md">Metas &amp; Sonhos</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1E293B] hover:text-white transition-all" data-path="planejamento-orcamento" href="#"><span class="material-symbols-outlined text-xl text-slate-400">pie_chart</span><span class="font-label-md text-label-md">Planejamento &amp; Orçamento</span></a></nav></div><div class="p-4 flex flex-col gap-2 border-t border-slate-800/60"><div class="p-3.5 rounded-xl bg-[#161F30] border border-slate-800/80 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-slate-400 font-medium">Fechamento Mensal</span><span class="font-label-sm text-label-sm text-primary font-bold">78%</span></div><div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width: 78%"></div></div><span class="font-label-sm text-label-sm text-slate-400">Orçamento sob controle</span></div><div class="flex items-center justify-between px-2 pt-2 text-slate-400"><div class="flex items-center gap-2 hover:text-slate-200 cursor-pointer transition-colors"><span class="material-symbols-outlined text-base">help_outline</span><span class="font-label-sm text-label-sm">Suporte do Casal</span></div><div class="flex items-center gap-2 hover:text-slate-200 cursor-pointer transition-colors"><span class="material-symbols-outlined text-base">settings</span><span class="font-label-sm text-label-sm">Ajustes</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen bg-[#0B0F17]"><header class="fixed top-0 left-72 right-0 h-20 bg-[#0B0F17]/80 backdrop-blur-xl z-40 border-b border-slate-800/80 px-8 flex items-center justify-between"><div class="flex items-center gap-4"><div class="bg-[#161F30] p-1 rounded-full border border-slate-700/60 flex items-center gap-1 shadow-inner"><button class="px-3.5 py-1.5 rounded-full bg-emerald-500 text-slate-950 font-label-sm text-label-sm font-bold transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20"><span class="material-symbols-outlined text-sm">join_inner</span>Visão Conjunta (NósDois)</button><button class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white font-label-sm text-label-sm font-medium transition-all hover:bg-slate-800/50">Lucas</button><button class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white font-label-sm text-label-sm font-medium transition-all hover:bg-slate-800/50">Beatriz</button></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 bg-emerald-500 text-slate-950 hover:bg-emerald-400 font-label-md text-label-md font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/25"><span class="material-symbols-outlined text-lg">add</span><span>Nova Despesa / Receita</span></button><div class="h-6 w-px bg-slate-800"></div><button class="relative p-2.5 rounded-xl bg-[#161F30] border border-slate-700/60 text-slate-300 hover:bg-slate-800 hover:text-white transition-all"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-[#161F30]"></span></button><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-white font-semibold leading-tight">Lucas &amp; Beatriz</span><span class="font-label-sm text-label-sm text-primary font-semibold">Premium Ativo</span></div><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-emerald-500/60 shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB1vnKOtX_iO5sUDmdfKAcIq_M1yYauB2WXtZ49aMFLhsgW6uKYiWwH1zQS3ionBlTITIDZ6kje1r2WK5K9kyC0J_yZADbkyh5rl3nMcZKUennrHSuWY5V0zqjy2LlejOWrv2NRu_pJ-y51kAyZs6APigOWVdjbS0SA4wBwlHjFksvGU6h4hfdMCvhCLCvJncpacsl8hXm75j-bJ-NmEyt38q4M5NDKlx_oxbsuwguCnctFvS4gRHYPw"/></div></div></header><main class="relative pt-20 flex-1 bg-[#0B0F17] w-full px-8 pb-16"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto space-y-8 pb-12 pt-6">
+<!-- Header & Subtitle Context -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-2">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-label-sm text-label-sm uppercase tracking-wider font-semibold">Gestão Patrimonial</span>
+<span class="text-slate-400 font-label-sm text-label-sm">• Parceria &amp; Autonomia</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-white tracking-tight">Carteiras &amp; Cartões</h1>
+<p class="font-body-md text-body-md text-slate-300 max-w-xl mt-1">
+          Equilíbrio entre a vida a dois e a independência pessoal. Acompanhe contas compartilhadas, faturas e seus orçamentos livres individuais.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="px-4 py-2.5 rounded-xl bg-[#161F30] border border-slate-700/70 text-slate-200 font-label-md text-label-md flex items-center gap-2 shadow-sm hover:bg-[#1E293B] hover:text-white transition-all">
+<span class="material-symbols-outlined text-base text-slate-400">tune</span>
+          Regras de Divisão
+        </button>
+<button class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-label-md text-label-md font-bold flex items-center gap-2 shadow-lg shadow-emerald-500/25 transition-all">
+<span class="material-symbols-outlined text-base">credit_card</span>
+          Adicionar Cartão / Conta
+        </button>
+</div>
+</div>
+<!-- View Switcher Tabs -->
+<div class="bg-[#131926] border border-slate-800 p-1.5 rounded-2xl flex flex-wrap items-center justify-between gap-3 shadow-md">
+<div class="flex items-center gap-1.5 bg-[#0B0F17] p-1 rounded-xl border border-slate-800" id="view-tabs">
+<button class="tab-trigger flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20" id="tab-btn-conjunta" onclick="switchTab('conjunta')">
+<span class="material-symbols-outlined text-base">diversity_1</span>
+<span>Carteira Conjunta</span>
+<span class="px-2 py-0.2 rounded-full bg-slate-950/20 text-xs font-semibold">Ativa</span>
+</button>
+<button class="tab-trigger flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-slate-400 hover:text-white font-medium hover:bg-slate-800/40" id="tab-btn-lucas" onclick="switchTab('lucas')">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span>Carteira Lucas</span>
+</button>
+<button class="tab-trigger flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-slate-400 hover:text-white font-medium hover:bg-slate-800/40" id="tab-btn-beatriz" onclick="switchTab('beatriz')">
+<span class="w-2 h-2 rounded-full bg-rose-400"></span>
+<span>Carteira Beatriz</span>
+</button>
+</div>
+<div class="flex items-center gap-3 px-3 py-1">
+<span class="font-label-sm text-label-sm text-slate-400">Acordo atual:</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">balance</span> 55% Lucas / 45% Beatriz
+        </span>
+</div>
+</div>
+<!-- TAB 1: CARTEIRA CONJUNTA (DEFAULT) -->
+<div class="space-y-8 block" id="content-conjunta">
+<!-- Top Bento: Shared Balance & Contribution Proportion -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<!-- Shared Balance Card (7 cols) -->
+<div class="lg:col-span-7 bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden backdrop-blur-sm">
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between pb-4 border-b border-slate-800/70">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">account_balance</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold tracking-wider">Patrimônio Compartilhado</span>
+<p class="font-headline-sm text-headline-sm text-white">Contas Conjuntas do Casal</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-label-sm text-label-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Em dia
+              </span>
+</div>
+<div class="my-5">
+<span class="font-label-md text-label-md text-slate-400">Saldo Total Disponível</span>
+<div class="flex items-baseline gap-3 mt-1.5">
+<span class="font-currency-display text-currency-display text-white tracking-tight">R$ 24.890,00</span>
+<span class="font-label-sm text-label-sm text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-md font-semibold">+6.4% este mês</span>
+</div>
+</div>
+</div>
+<!-- Sub accounts list -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4 relative z-10">
+<div class="p-3.5 rounded-xl bg-[#0F172A] border border-slate-700/50 flex items-center justify-between hover:border-slate-600/70 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-bold text-orange-400 text-xs">
+                  IN
+                </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-white">Inter Conjunta</p>
+<p class="font-body-sm text-body-sm text-slate-400">Despesas Fixas da Casa</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md font-semibold text-white">R$ 10.450,00</p>
+<p class="font-label-sm text-label-sm text-slate-400">C/C Compartilhada</p>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-[#0F172A] border border-slate-700/50 flex items-center justify-between hover:border-slate-600/70 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-purple-500/15 border border-purple-500/30 flex items-center justify-center font-bold text-purple-400 text-xs">
+                  NU
+                </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-white">Reserva Nubank</p>
+<p class="font-body-sm text-body-sm text-slate-400">Fundo de Emergência</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md font-semibold text-white">R$ 14.440,00</p>
+<p class="font-label-sm text-label-sm text-emerald-400 font-medium">100% CDI</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Contribution Distribution Chart Card (5 cols) -->
+<div class="lg:col-span-5 bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3 pb-3 border-b border-slate-800/70">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400 text-xl">pie_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-white">Composição Patrimonial</h2>
+</div>
+<span class="font-label-sm text-label-sm text-slate-400 font-medium">Novembro 2024</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300">
+              Distribuição acordada e proporcional às rendas líquidas de cada um:
+            </p>
+</div>
+<div class="py-4 flex flex-col sm:flex-row items-center justify-around gap-6">
+<!-- Inline SVG Donut Chart -->
+<div class="relative w-36 h-36 shrink-0">
+<svg class="w-full h-full -rotate-90 drop-shadow-[0_0_8px_rgba(16,185,129,0.25)]" viewbox="0 0 36 36">
+<!-- Background circle -->
+<circle class="stroke-slate-800" cx="18" cy="18" fill="none" r="14" stroke-width="3.8"></circle>
+<!-- Lucas 55% = 87.96 * 0.55 = 48.38 -->
+<circle class="stroke-emerald-400" cx="18" cy="18" fill="none" r="14" stroke-dasharray="48.38 87.96" stroke-linecap="round" stroke-width="3.8"></circle>
+<!-- Beatriz 45% = 87.96 * 0.45 = 39.58 offset 48.38 -->
+<circle class="stroke-amber-400" cx="18" cy="18" fill="none" r="14" stroke-dasharray="39.58 87.96" stroke-dashoffset="-48.38" stroke-linecap="round" stroke-width="3.8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-label-sm text-label-sm text-slate-400 uppercase tracking-wider font-semibold">Total</span>
+<span class="font-headline-sm text-headline-sm text-white font-bold">100%</span>
+</div>
+</div>
+<!-- Legend breakdown -->
+<div class="space-y-3 w-full sm:w-auto">
+<div class="flex items-center justify-between sm:justify-start gap-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
+<span class="font-label-md text-label-md text-slate-200">Lucas (55%)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-emerald-400">R$ 13.689,50</span>
+</div>
+<div class="flex items-center justify-between sm:justify-start gap-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]"></span>
+<span class="font-label-md text-label-md text-slate-200">Beatriz (45%)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-amber-400">R$ 11.200,50</span>
+</div>
+<div class="pt-2 text-xs text-slate-300 bg-[#0F172A] border border-slate-700/50 p-2.5 rounded-xl">
+<span class="font-semibold text-white">Equilíbrio Ativo:</span> Ambos aportam pontualmente todo dia 05.
+              </div>
+</div>
+</div>
+<div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden flex">
+<div class="bg-emerald-400 h-full shadow-[0_0_6px_rgba(52,211,153,0.6)]" style="width: 55%"></div>
+<div class="bg-amber-400 h-full shadow-[0_0_6px_rgba(251,191,36,0.6)]" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<!-- Shared Credit Cards (Realistic Gradient Cards & Details) -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white">Cartões Conjuntos</h2>
+<p class="font-body-sm text-body-sm text-slate-400">Faturas compartilhadas debitadas da Conta Inter Conjunta</p>
+</div>
+<span class="font-label-md text-label-md text-emerald-400 font-semibold cursor-pointer hover:text-emerald-300 flex items-center gap-1 transition-colors">
+            Gerenciar adicionais <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Card 1: Visa Infinite Compartilhado -->
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-6">
+<!-- Realistic Card Physical Representation (Dark Black Luxury) -->
+<div class="w-full h-52 rounded-2xl p-6 flex flex-col justify-between text-white shadow-2xl relative overflow-hidden bg-gradient-to-br from-[#0c1f17] via-[#091510] to-[#040806] border border-emerald-500/30">
+<!-- Card Texture and Ambient Glow -->
+<div class="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-0 left-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-emerald-400">contactless</span>
+<span class="font-label-sm text-label-sm tracking-widest text-emerald-300 uppercase font-bold">NósDois Black</span>
+</div>
+<span class="font-headline-sm text-headline-sm italic tracking-tighter text-white font-extrabold drop-shadow">VISA</span>
+</div>
+<!-- Chip Representation -->
+<div class="relative z-10 flex items-center gap-3">
+<div class="w-10 h-7 rounded-md bg-gradient-to-br from-amber-200 to-amber-500/80 border border-amber-300/40 flex flex-col justify-around p-1 shadow-sm">
+<div class="w-full h-0.5 bg-amber-900/40 rounded"></div>
+<div class="w-full h-0.5 bg-amber-900/40 rounded"></div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-200/80 font-medium">Uso Exclusivo do Casal</span>
+</div>
+<div class="relative z-10 flex items-end justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-slate-300 tracking-widest font-mono">•••• •••• •••• 8842</p>
+<p class="font-label-md text-label-md font-semibold tracking-wide text-white">LUCAS &amp; BEATRIZ S</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-slate-400">EXP</p>
+<p class="font-label-md text-label-md font-semibold text-white font-mono">08/29</p>
+</div>
+</div>
+</div>
+<!-- Card Metrics & Statement details -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-400">Fatura Atual (Fecha em 04 dias)</span>
+<p class="font-headline-sm text-headline-sm text-white font-bold">R$ 4.280,30</p>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-slate-400">Melhor Dia de Compra</span>
+<p class="font-label-md text-label-md text-emerald-400 font-bold flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">event</span> Dia 18
+                  </p>
+</div>
+</div>
+<!-- Limit bar -->
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="text-slate-400">Limite Utilizado: <strong class="text-slate-100">R$ 4.280,30</strong></span>
+<span class="text-slate-400">Disponível: <strong class="text-emerald-400">R$ 15.719,70</strong></span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style="width: 21.4%"></div>
+</div>
+<span class="text-right block font-label-sm text-label-sm text-slate-400 mt-1">Limite total: R$ 20.000,00</span>
+</div>
+<div class="p-3 bg-[#0F172A] border border-slate-700/50 rounded-xl flex items-center justify-between text-xs">
+<span class="text-slate-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-emerald-400">verified</span> Débito em conta conjunta ativado
+                </span>
+<button class="font-semibold text-emerald-400 hover:text-emerald-300 hover:underline">Ver Lançamentos</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Mastercard Black Compartilhado (Nubank Ultravioleta Dark) -->
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-6">
+<!-- Realistic Card Physical Representation -->
+<div class="w-full h-52 rounded-2xl p-6 flex flex-col justify-between text-white shadow-2xl relative overflow-hidden bg-gradient-to-br from-[#1b102b] via-[#11091d] to-[#07030c] border border-purple-500/30">
+<!-- Ambient circles -->
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-purple-600/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-0 left-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-purple-300">wifi</span>
+<span class="font-label-sm text-label-sm tracking-widest text-purple-200 uppercase font-bold">Nubank Ultravioleta</span>
+</div>
+<!-- Mastercard logo representation -->
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-rose-500 shadow-md"></div>
+<div class="w-6 h-6 rounded-full bg-amber-400/90 mix-blend-screen shadow-md"></div>
+</div>
+</div>
+<!-- Chip Representation -->
+<div class="relative z-10 flex items-center gap-3">
+<div class="w-10 h-7 rounded-md bg-gradient-to-br from-slate-300 to-slate-500/80 border border-slate-400/40 flex flex-col justify-around p-1 shadow-sm">
+<div class="w-full h-0.5 bg-slate-900/40 rounded"></div>
+<div class="w-full h-0.5 bg-slate-900/40 rounded"></div>
+</div>
+<span class="font-label-sm text-label-sm text-purple-200/80 font-medium">Viagens &amp; Supermercado</span>
+</div>
+<div class="relative z-10 flex items-end justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-slate-300 tracking-widest font-mono">•••• •••• •••• 3190</p>
+<p class="font-label-md text-label-md font-semibold tracking-wide text-white">BEATRIZ &amp; LUCAS S</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-slate-400">EXP</p>
+<p class="font-label-md text-label-md font-semibold text-white font-mono">11/30</p>
+</div>
+</div>
+</div>
+<!-- Card Metrics & Statement details -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-400">Fatura Atual (Vence dia 25)</span>
+<p class="font-headline-sm text-headline-sm text-white font-bold">R$ 1.940,50</p>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-slate-400">Melhor Dia de Compra</span>
+<p class="font-label-md text-label-md text-emerald-400 font-bold flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">event</span> Dia 15
+                  </p>
+</div>
+</div>
+<!-- Limit bar -->
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="text-slate-400">Limite Utilizado: <strong class="text-slate-100">R$ 1.940,50</strong></span>
+<span class="text-slate-400">Disponível: <strong class="text-emerald-400">R$ 13.059,50</strong></span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-purple-500 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]" style="width: 12.9%"></div>
+</div>
+<span class="text-right block font-label-sm text-label-sm text-slate-400 mt-1">Limite total: R$ 15.000,00</span>
+</div>
+<div class="p-3 bg-[#0F172A] border border-slate-700/50 rounded-xl flex items-center justify-between text-xs">
+<span class="text-slate-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-amber-400">stars</span> Cashback acumulado: <strong class="text-white">R$ 38,80</strong>
+</span>
+<button class="font-semibold text-emerald-400 hover:text-emerald-300 hover:underline">Ver Lançamentos</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Settlement & Reimbursement Ledger (Histórico de Acertos) -->
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
+<span class="material-symbols-outlined text-xl">sync_alt</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white">Histórico de Reembolsos &amp; Acertos</h2>
+<p class="font-body-sm text-body-sm text-slate-400">Equilíbrio contínuo para manter a proporção justa de 55/45 sem desgastes</p>
+</div>
+</div>
+<button class="px-4 py-2 rounded-xl bg-[#0F172A] border border-slate-700/70 text-slate-200 font-label-md text-label-md flex items-center gap-1.5 hover:bg-[#1E293B] hover:text-white transition-all">
+<span class="material-symbols-outlined text-base text-slate-400">receipt</span> Simular Fechamento
+          </button>
+</div>
+<div class="space-y-3 pt-6">
+<!-- Item 1: Auto Settlement -->
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-slate-600 transition-colors">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-lg">autorenew</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<p class="font-label-md text-label-md font-semibold text-white">Acerto mensal automático</p>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-label-sm text-label-sm font-semibold">Concluído</span>
+<span class="text-xs text-slate-400">Pix realizado dia 05/11</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-0.5">
+                  Lucas transferiu para Beatriz para equilibrar gastos extras de supermercado pagos individualmente.
+                </p>
+</div>
+</div>
+<div class="text-left md:text-right shrink-0 pl-12 md:pl-0">
+<p class="font-label-md text-label-md font-bold text-emerald-400">R$ 420,00</p>
+<span class="font-label-sm text-label-sm text-slate-400">Lucas → Beatriz</span>
+</div>
+</div>
+<!-- Item 2: One-off reimbursement -->
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-slate-600 transition-colors">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-lg">medical_services</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<p class="font-label-md text-label-md font-semibold text-white">Reembolso Veterinário (Pipoca)</p>
+<span class="px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 font-label-sm text-label-sm font-semibold">Compensado em Fatura</span>
+<span class="text-xs text-slate-400">Dia 28/10</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-0.5">
+                  Beatriz adiantou a consulta na clínica veterinária com cartão pessoal; valor creditado na cota mensal de Lucas.
+                </p>
+</div>
+</div>
+<div class="text-left md:text-right shrink-0 pl-12 md:pl-0">
+<p class="font-label-md text-label-md font-bold text-white">R$ 180,00</p>
+<span class="font-label-sm text-label-sm text-slate-400">Ajustado na cota</span>
+</div>
+</div>
+<!-- Item 3: Vacation reservation split -->
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-slate-600 transition-colors">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-lg">flight_takeoff</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<p class="font-label-md text-label-md font-semibold text-white">Airbnb Réveillon Ubatuba</p>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-label-sm text-label-sm font-semibold">Dividido 50/50</span>
+<span class="text-xs text-slate-400">Dia 15/10</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-0.5">
+                  Decisão de lazer dividida em partes iguais diretamente da Reserva do Nubank.
+                </p>
+</div>
+</div>
+<div class="text-left md:text-right shrink-0 pl-12 md:pl-0">
+<p class="font-label-md text-label-md font-bold text-white">R$ 1.600,00</p>
+<span class="font-label-sm text-label-sm text-slate-400">Débito Reserva Conjunta</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPARISON SECTION: CARTEIRAS PESSOAIS LADO A LADO -->
+<div class="space-y-4 pt-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white">Autonomia &amp; Individualidade (Lado a Lado)</h2>
+<p class="font-body-sm text-body-sm text-slate-400">Dinheiro pessoal para cada um gastar livremente, sem necessidade de prestação de contas.</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-300 bg-[#161F30] border border-slate-700/60 px-3.5 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-sm text-emerald-400">lock_clock</span>
+          Privacidade e transparência acordadas
+        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+<!-- COLUNA LUCAS -->
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<!-- Header Lucas -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-sky-500/15 border border-sky-500/30 flex items-center justify-center font-headline-sm text-headline-sm text-sky-400 font-bold">
+                  L
+                </div>
+<div>
+<span class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold">Carteira Pessoal</span>
+<p class="font-headline-sm text-headline-sm text-white font-bold">Lucas</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-[#0F172A] border border-slate-700 text-slate-300 font-label-sm text-label-sm">Sem satisfação</span>
+</div>
+<!-- Saldo Livre -->
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Saldo Livre Próprio (Mês)</span>
+<p class="font-currency-display text-currency-display text-white font-bold mt-1">R$ 3.100,00</p>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mt-3">
+<div class="bg-sky-400 h-full rounded-full shadow-[0_0_8px_rgba(56,189,248,0.5)]" style="width: 62%"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-400 mt-1.5">
+<span>R$ 1.900 gastos</span>
+<span>Teto pessoal: R$ 5.000</span>
+</div>
+</div>
+<!-- Mini Cartão Individual Lucas -->
+<div class="p-4 rounded-xl bg-gradient-to-r from-[#182338] via-[#101826] to-[#0a101d] border border-sky-500/30 text-white shadow-lg flex items-center justify-between relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-sky-500/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm text-sky-300 uppercase tracking-wider font-semibold">Cartão Pessoal Lucas</p>
+<p class="font-label-md text-label-md font-bold mt-0.5 text-white">C6 Carbon Mastercard •••• 4511</p>
+<p class="font-body-sm text-body-sm text-slate-300 mt-1">Fatura atual: <strong class="text-white">R$ 1.150,00</strong></p>
+</div>
+<span class="material-symbols-outlined text-3xl text-sky-400/50 relative z-10">contactless</span>
+</div>
+<!-- Categorias de Gastos Individuais -->
+<div>
+<p class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold mb-2.5">Gastos Livres Recentes (Sem cobrança de satisfação)</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-[#0F172A] border border-slate-700/40 text-xs hover:border-slate-600 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-slate-400">fitness_center</span>
+<div>
+<p class="font-label-md text-label-md text-white font-semibold">Smart Fit Black</p>
+<p class="text-slate-400">Academia &amp; Suplementos</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">R$ 139,90</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-[#0F172A] border border-slate-700/40 text-xs hover:border-slate-600 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-slate-400">sports_esports</span>
+<div>
+<p class="font-label-md text-label-md text-white font-semibold">Steam Store (Jogos)</p>
+<p class="text-slate-400">Hobbies &amp; Entretenimento</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">R$ 249,00</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-[#0F172A] border border-slate-700/40 text-xs hover:border-slate-600 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-slate-400">memory</span>
+<div>
+<p class="font-label-md text-label-md text-white font-semibold">Upgrade SSD M.2</p>
+<p class="text-slate-400">Tecnologia &amp; Gadgets</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">R$ 480,00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-xl bg-[#1E293B] hover:bg-slate-700 border border-slate-700 text-white font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2" onclick="switchTab('lucas')">
+<span>Abrir Visão Completa de Lucas</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- COLUNA BEATRIZ -->
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<!-- Header Beatriz -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-rose-500/15 border border-rose-500/30 flex items-center justify-center font-headline-sm text-headline-sm text-rose-400 font-bold">
+                  B
+                </div>
+<div>
+<span class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold">Carteira Pessoal</span>
+<p class="font-headline-sm text-headline-sm text-white font-bold">Beatriz</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-[#0F172A] border border-slate-700 text-slate-300 font-label-sm text-label-sm">Sem satisfação</span>
+</div>
+<!-- Saldo Livre -->
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Saldo Livre Próprio (Mês)</span>
+<p class="font-currency-display text-currency-display text-white font-bold mt-1">R$ 2.950,00</p>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mt-3">
+<div class="bg-rose-500 h-full rounded-full shadow-[0_0_8px_rgba(244,63,94,0.5)]" style="width: 59%"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-400 mt-1.5">
+<span>R$ 2.050 gastos</span>
+<span>Teto pessoal: R$ 5.000</span>
+</div>
+</div>
+<!-- Mini Cartão Individual Beatriz -->
+<div class="p-4 rounded-xl bg-gradient-to-r from-[#381622] via-[#240e16] to-[#120509] border border-rose-500/30 text-white shadow-lg flex items-center justify-between relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-rose-500/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm text-rose-300 uppercase tracking-wider font-semibold">Cartão Pessoal Beatriz</p>
+<p class="font-label-md text-label-md font-bold mt-0.5 text-white">Itaú Personnalité Visa •••• 9021</p>
+<p class="font-body-sm text-body-sm text-slate-300 mt-1">Fatura atual: <strong class="text-white">R$ 1.420,00</strong></p>
+</div>
+<span class="material-symbols-outlined text-3xl text-rose-400/50 relative z-10">contactless</span>
+</div>
+<!-- Categorias de Gastos Individuais -->
+<div>
+<p class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold mb-2.5">Gastos Livres Recentes (Sem cobrança de satisfação)</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-[#0F172A] border border-slate-700/40 text-xs hover:border-slate-600 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-slate-400">school</span>
+<div>
+<p class="font-label-md text-label-md text-white font-semibold">Curso UI/UX Leadership</p>
+<p class="text-slate-400">Especialização Profissional</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">R$ 380,00</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-[#0F172A] border border-slate-700/40 text-xs hover:border-slate-600 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-slate-400">spa</span>
+<div>
+<p class="font-label-md text-label-md text-white font-semibold">Studio D'Beauté &amp; Spa</p>
+<p class="text-slate-400">Estética &amp; Cuidados Pessoais</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">R$ 290,00</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-[#0F172A] border border-slate-700/40 text-xs hover:border-slate-600 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-slate-400">menu_book</span>
+<div>
+<p class="font-label-md text-label-md text-white font-semibold">Livraria da Travessa</p>
+<p class="text-slate-400">Livros &amp; Leituras do Trimestre</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">R$ 164,50</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-xl bg-[#1E293B] hover:bg-slate-700 border border-slate-700 text-white font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2" onclick="switchTab('beatriz')">
+<span>Abrir Visão Completa de Beatriz</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: DETALHES CARTEIRA LUCAS (HIDDEN BY DEFAULT) -->
+<div class="space-y-6 hidden" id="content-lucas">
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-xl">
+<div class="flex items-center justify-between pb-6 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 font-headline-md text-headline-md font-bold">
+              L
+            </div>
+<div>
+<span class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold">Visão Individual Isolada</span>
+<h2 class="font-headline-md text-headline-md text-white">Carteira Pessoal de Lucas</h2>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-xl bg-[#0F172A] border border-slate-700 text-slate-200 font-label-sm text-label-sm flex items-center gap-1.5 hover:bg-slate-800 transition-colors" onclick="switchTab('conjunta')">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Voltar para Visão Conjunta
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Saldo em Conta Salário (Itaú)</span>
+<p class="font-headline-sm text-headline-sm text-white mt-1 font-bold">R$ 5.420,00</p>
+<span class="text-xs text-emerald-400 font-semibold">Renda líquida depositada</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Cota Comprometida no Casal (55%)</span>
+<p class="font-headline-sm text-headline-sm text-emerald-400 mt-1 font-bold">R$ 4.850,00</p>
+<span class="text-xs text-slate-400">Transferido para Inter Conjunto</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Saldo de Autonomia Pessoal</span>
+<p class="font-headline-sm text-headline-sm text-white mt-1 font-bold">R$ 3.100,00</p>
+<span class="text-xs text-slate-400">100% livre de supervisão</span>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-xl bg-[#0F172A] border border-slate-700/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sky-400">credit_card</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-white">C6 Carbon Black •••• 4511</p>
+<p class="font-body-sm text-body-sm text-slate-400">Limite disponível: R$ 22.850,00 (Fatura vence dia 10)</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">Fatura: R$ 1.150,00</span>
+</div>
+</div>
+</div>
+<!-- TAB 3: DETALHES CARTEIRA BEATRIZ (HIDDEN BY DEFAULT) -->
+<div class="space-y-6 hidden" id="content-beatriz">
+<div class="bg-[#161F30] border border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-xl">
+<div class="flex items-center justify-between pb-6 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 font-headline-md text-headline-md font-bold">
+              B
+            </div>
+<div>
+<span class="font-label-sm text-label-sm text-slate-400 uppercase font-semibold">Visão Individual Isolada</span>
+<h2 class="font-headline-md text-headline-md text-white">Carteira Pessoal de Beatriz</h2>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-xl bg-[#0F172A] border border-slate-700 text-slate-200 font-label-sm text-label-sm flex items-center gap-1.5 hover:bg-slate-800 transition-colors" onclick="switchTab('conjunta')">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Voltar para Visão Conjunta
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Saldo em Conta Salário (Bradesco)</span>
+<p class="font-headline-sm text-headline-sm text-white mt-1 font-bold">R$ 4.980,00</p>
+<span class="text-xs text-emerald-400 font-semibold">Renda líquida depositada</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Cota Comprometida no Casal (45%)</span>
+<p class="font-headline-sm text-headline-sm text-amber-400 mt-1 font-bold">R$ 3.968,00</p>
+<span class="text-xs text-slate-400">Transferido para Inter Conjunto</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0F172A] border border-slate-700/50">
+<span class="font-label-sm text-label-sm text-slate-400">Saldo de Autonomia Pessoal</span>
+<p class="font-headline-sm text-headline-sm text-white mt-1 font-bold">R$ 2.950,00</p>
+<span class="text-xs text-slate-400">100% livre de supervisão</span>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-xl bg-[#0F172A] border border-slate-700/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-rose-400">credit_card</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-white">Itaú Personnalité Visa •••• 9021</p>
+<p class="font-body-sm text-body-sm text-slate-400">Limite disponível: R$ 18.580,00 (Fatura vence dia 12)</p>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-white">Fatura: R$ 1.420,00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchTab(target) {
+    const tabs = ['conjunta', 'lucas', 'beatriz'];
+    
+    tabs.forEach(tab => {
+      const content = document.getElementById('content-' + tab);
+      const btn = document.getElementById('tab-btn-' + tab);
+      
+      if (tab === target) {
+        if (content) content.classList.remove('hidden');
+        if (btn) {
+          btn.className = 'tab-trigger flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20';
+        }
+      } else {
+        if (content) content.classList.add('hidden');
+        if (btn) {
+          btn.className = 'tab-trigger flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-slate-400 hover:text-white font-medium hover:bg-slate-800/40';
+        }
+      }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script></main><footer class="fixed bottom-0 left-72 right-0 h-10 bg-[#0B0F17]/90 backdrop-blur-md border-t border-slate-800/80 z-30 px-8 flex items-center justify-between text-slate-400"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-emerald-400">lock</span><span class="font-label-sm text-label-sm text-slate-400">Sincronização bancária segura e criptografada (Open Finance Brasil)</span><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 ml-1 shadow-[0_0_6px_rgba(52,211,153,0.8)]"></span><span class="font-label-sm text-label-sm text-emerald-400 font-semibold">Atualizado há 4 min</span></div><div class="flex items-center gap-6"><span class="font-label-sm text-label-sm text-slate-400 hover:text-slate-200 cursor-pointer transition-colors">Auditoria Conjunta</span><span class="font-label-sm text-label-sm text-slate-400 hover:text-slate-200 cursor-pointer transition-colors">Exportar Relatório</span><span class="font-label-sm text-label-sm text-slate-400 hover:text-slate-200 cursor-pointer transition-colors">Privacidade 50/50</span></div></footer></div></body></html>

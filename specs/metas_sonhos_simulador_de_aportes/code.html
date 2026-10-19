@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed-dim": "#bec6e0",
+          "outline-variant": "#c0c9c0",
+          "on-surface-variant": "#404942",
+          "secondary-container": "#dae2fd",
+          "on-error": "#ffffff",
+          "surface-bright": "#f8f9ff",
+          "primary": "#003820",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "inverse-surface": "#213145",
+          "secondary": "#565e74",
+          "inverse-on-surface": "#eaf1ff",
+          "on-primary-fixed-variant": "#0f5132",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tertiary": "#1000a8",
+          "on-tertiary-fixed-variant": "#2f2ebe",
+          "outline": "#707971",
+          "surface-tint": "#2d6a48",
+          "on-primary-fixed": "#002111",
+          "on-tertiary": "#ffffff",
+          "on-secondary-fixed": "#131b2e",
+          "background": "#f8f9ff",
+          "primary-fixed-dim": "#95d4ac",
+          "surface-container-high": "#dce9ff",
+          "tertiary-container": "#2e2dbe",
+          "on-tertiary-container": "#abadff",
+          "on-error-container": "#93000a",
+          "tertiary-fixed": "#e1e0ff",
+          "surface-container": "#e5eeff",
+          "on-secondary-container": "#5c647a",
+          "inverse-primary": "#95d4ac",
+          "surface": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-fixed-dim": "#c0c1ff",
+          "primary-fixed": "#b0f1c7",
+          "on-secondary-fixed-variant": "#3f465c",
+          "on-primary-container": "#84c39b",
+          "secondary-fixed": "#dae2fd",
+          "surface-container-highest": "#d3e4fe",
+          "on-tertiary-fixed": "#07006c",
+          "surface-dim": "#cbdbf5",
+          "surface-variant": "#d3e4fe",
+          "surface-container-low": "#eff4ff",
+          "primary-container": "#0f5132",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "margin": "2rem",
+          "space-xl": "2.5rem",
+          "space-sm": "0.5rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-md": ["Plus Jakarta Sans"],
+          "currency-display": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "currency-display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 px-6 flex items-center gap-3"><img alt="NósDois Finanças Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VeEXrSZfPK19XuKdMzswwn-ERqOgALx9mVUNsPBO2dhc-Wu2uqIXncXQ9vB5o4G4Jqky_kukJQCPQkgBRB9B0ZB-jOWgNNkRoLLMqQlVcNw-rh3sPyHnI_nfTnldU58637zI9EOkC7OlzIitoNQ_wqzzKnHGSwI4BE_NlhArKMol0wOzbeDidNrzO874TFepupagtS5nqAPwj4P7EndKcX0Y32Ch8CRv9JPxXCX19G_oGTOZm51RAei4k"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">NósDois</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Finanças Compartilhadas</span></div></div><div class="px-4 py-2"><div class="p-3 rounded-xl bg-surface-container-lowest flex items-center gap-3 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-lg">diversity_1</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold">Lucas & Beatriz</span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Plano Duo Premium</span></div></div></div><div class="px-6 pt-4 pb-2"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Menu Principal</span></div><nav class="px-4 space-y-1 flex flex-col" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="despesas-receitas" href="#"><span class="material-symbols-outlined text-xl">receipt_long</span><span class="font-label-md text-label-md">Despesas & Receitas</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="carteiras-cartoes" href="#"><span class="material-symbols-outlined text-xl">account_balance_wallet</span><span class="font-label-md text-label-md">Carteiras & Cartões</span></a><a aria-current="page" class="flex items-center gap-3.5 px-3.5 py-2.5 transition-all bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="metas-sonhos" href="#"><span class="material-symbols-outlined text-xl">savings</span><span class="font-label-md text-label-md">Metas & Sonhos</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="planejamento-orcamento" href="#"><span class="material-symbols-outlined text-xl">pie_chart</span><span class="font-label-md text-label-md">Planejamento & Orçamento</span></a></nav></div><div class="p-4 flex flex-col gap-2"><div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary font-medium">Fechamento Mensal</span><span class="font-label-sm text-label-sm text-primary font-semibold">78%</span></div><div class="w-full h-1.5 rounded-full bg-outline-variant overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 78%"></div></div><span class="font-label-sm text-label-sm text-on-surface-variant">Orçamento sob controle</span></div><div class="flex items-center justify-between px-2 pt-2 text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">help_outline</span><span class="font-label-sm text-label-sm">Suporte do Casal</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">settings</span><span class="font-label-sm text-label-sm">Ajustes</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-8 flex items-center justify-between"><div class="flex items-center gap-4"><div class="bg-surface-container p-1 rounded-full flex items-center gap-1 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">join_inner</span>Visão Conjunta (NósDois)</button><button class="px-3.5 py-1.5 rounded-full text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium transition-all">Lucas</button><button class="px-3.5 py-1.5 rounded-full text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium transition-all">Beatriz</button></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold rounded-xl transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-lg">add</span><span>Nova Despesa / Receita</span></button><div class="h-6 w-px bg-outline-variant"></div><button class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lucas & Beatriz</span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Premium Ativo</span></div><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB1vnKOtX_iO5sUDmdfKAcIq_M1yYauB2WXtZ49aMFLhsgW6uKYiWwH1zQS3ionBlTITIDZ6kje1r2WK5K9kyC0J_yZADbkyh5rl3nMcZKUennrHSuWY5V0zqjy2LlejOWrv2NRu_pJ-y51kAyZs6APigOWVdjbS0SA4wBwlHjFksvGU6h4hfdMCvhCLCvJncpacsl8hXm75j-bJ-NmEyt38q4M5NDKlx_oxbsuwguCnctFvS4gRHYPw"/></div></div></header><main class="relative pt-20 flex-1 bg-surface w-full px-8 pb-16"><div class="flex flex-col w-full">
+<!-- Banner / Header de Contexto do Casal -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-low p-6 lg:p-8 shadow-sm">
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+<div class="max-w-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary text-label-sm font-label-sm mb-3">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          Jornada Financeira Compartilhada
+        </div>
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">Planejando o futuro a dois</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+          Cada objetivo concluído aproxima seus maiores sonhos de se tornarem realidade prática e serena.
+        </p>
+</div>
+<!-- Resumo do Progresso Total -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-md min-w-[320px] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Patrimônio em Metas</span>
+<span class="text-label-md font-label-md text-primary-container font-semibold bg-primary-fixed px-2.5 py-0.5 rounded-full">40.5% concluído</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-currency-display font-currency-display text-primary tracking-tight">R$ 48.600</span>
+<span class="text-body-md font-body-md text-secondary">/ R$ 120.000</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full transition-all duration-700" style="width: 40.5%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant pt-1">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+            Acumulado: <strong>R$ 48.600</strong>
+</span>
+<span class="text-secondary">Faltam: R$ 71.400</span>
+</div>
+</div>
+</div>
+<!-- Pílulas de Contribuição Geral -->
+<div class="mt-6 pt-5 border-t border-outline-variant/30 flex flex-wrap items-center gap-6">
+<div class="flex items-center gap-2 text-label-md font-label-md text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span>Aporte Lucas (Total): <strong class="text-tertiary-container">R$ 26.730</strong> (55%)</span>
+</div>
+<div class="flex items-center gap-2 text-label-md font-label-md text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Aporte Beatriz (Total): <strong class="text-secondary">R$ 21.870</strong> (45%)</span>
+</div>
+<div class="ml-auto text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">savings</span>
+<span>3 metas em andamento</span>
+</div>
+</div>
+</section>
+<!-- Grade Principal: Simulador Interativo + Visão de Metas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+<!-- Formulário Interativo & Calculadora Dinâmica (5 Colunas) -->
+<section class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-md flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2.5">
+<div class="p-2 bg-primary-fixed rounded-xl text-primary">
+<span class="material-symbols-outlined text-xl">calculate</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Simulador de Poupança</h2>
+<p class="text-label-sm font-label-sm text-secondary">Cálculo dinâmico para novos sonhos</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 bg-surface-container text-primary-container font-semibold rounded-full">
+            Divisão Inteligente
+          </span>
+</div>
+<!-- Campos do Formulário -->
+<div class="space-y-4">
+<!-- Seleção do Objetivo -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">O que é o sonho?</label>
+<div class="grid grid-cols-2 gap-2" id="goal-category-group">
+<button class="goal-pill px-3 py-2 rounded-xl text-label-sm font-label-sm flex items-center gap-2 bg-surface-container text-on-surface transition-all active-pill ring-2 ring-primary-container text-primary font-semibold" data-cost="24000" data-target="Eurotrip Toscana & Roma" type="button">
+<span class="material-symbols-outlined text-base">flight_takeoff</span>
+<span>Viagem Exterior</span>
+</button>
+<button class="goal-pill px-3 py-2 rounded-xl text-label-sm font-label-sm flex items-center gap-2 bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" data-cost="35000" data-target="Casamento dos Sonhos" type="button">
+<span class="material-symbols-outlined text-base">celebration</span>
+<span>Casamento</span>
+</button>
+<button class="goal-pill px-3 py-2 rounded-xl text-label-sm font-label-sm flex items-center gap-2 bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" data-cost="80000" data-target="Entrada do Imóvel" type="button">
+<span class="material-symbols-outlined text-base">real_estate_agent</span>
+<span>Entrada Apto</span>
+</button>
+<button class="goal-pill px-3 py-2 rounded-xl text-label-sm font-label-sm flex items-center gap-2 bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" data-cost="45000" data-target="Carro Novo Híbrido" type="button">
+<span class="material-symbols-outlined text-base">directions_car</span>
+<span>Carro Novo</span>
+</button>
+<button class="goal-pill col-span-2 px-3 py-2 rounded-xl text-label-sm font-label-sm flex items-center justify-center gap-2 bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" data-cost="30000" data-target="Reserva Estratégica 12 Meses" type="button">
+<span class="material-symbols-outlined text-base">shield_with_heart</span>
+<span>Reserva de Emergência</span>
+</button>
+</div>
+</div>
+<!-- Valor Estimado -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-on-surface" for="goal-amount">Preço total estimado</label>
+<span class="text-label-sm font-label-sm text-secondary">R$ em moeda local</span>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-label-md font-label-md text-secondary">R$</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container rounded-xl text-body-lg font-body-lg font-semibold text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container" id="goal-amount" max="500000" min="1000" step="500" type="number" value="18000"/>
+</div>
+</div>
+<!-- Prazo / Meses -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-on-surface" for="goal-months">Tempo para atingir</label>
+<span class="text-label-md font-label-md text-primary font-bold" id="months-display">12 meses</span>
+</div>
+<input class="w-full accent-primary-container h-2 bg-surface-container rounded-lg cursor-pointer" id="goal-months" max="60" min="2" type="range" value="12"/>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-secondary mt-1">
+<span>2 meses</span>
+<span id="target-date-display">Alvo: Março de 2026</span>
+<span>5 anos (60m)</span>
+</div>
+</div>
+<!-- Modo de Divisão -->
+<div class="pt-2">
+<span class="block text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-2">Formato de Rateio Mensal</span>
+<div class="grid grid-cols-2 gap-2 p-1 bg-surface-container rounded-xl">
+<button class="py-2 rounded-lg text-label-sm font-label-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm" id="split-mode-proportional" type="button">
+                Proporcional (55% / 45%)
+              </button>
+<button class="py-2 rounded-lg text-label-sm font-label-sm font-semibold text-secondary hover:text-on-surface transition-all" id="split-mode-equal" type="button">
+                Igualitário (50% / 50%)
+              </button>
+</div>
+</div>
+</div>
+<!-- Caixa de Resultado em Tempo Real -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-secondary">Aporte mensal total:</span>
+<span class="text-headline-sm font-headline-sm text-primary tracking-tight" id="total-monthly-output">R$ 1.500,00</span>
+</div>
+<div class="h-px bg-outline-variant/40"></div>
+<!-- Repartição por Pessoa -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary-container flex items-center justify-center text-label-sm font-label-sm font-bold">L</div>
+<span class="text-body-md font-body-md text-on-surface">Lucas (<span id="lucas-percent">55%</span>)</span>
+</div>
+<span class="text-label-md font-label-md font-semibold text-on-surface" id="lucas-monthly-output">R$ 825,00 /mês</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-secondary flex items-center justify-center text-label-sm font-label-sm font-bold">B</div>
+<span class="text-body-md font-body-md text-on-surface">Beatriz (<span id="bia-percent">45%</span>)</span>
+</div>
+<span class="text-label-md font-label-md font-semibold text-on-surface" id="bia-monthly-output">R$ 675,00 /mês</span>
+</div>
+</div>
+<!-- Barra de Proporção Visual -->
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden flex mt-1">
+<div class="bg-tertiary-container h-full transition-all" id="lucas-bar" style="width: 55%"></div>
+<div class="bg-secondary h-full transition-all" id="bia-bar" style="width: 45%"></div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary-container text-on-primary hover:bg-primary rounded-xl font-label-md text-label-md font-semibold transition-all shadow-md flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Adicionar aos Sonhos do Casal</span>
+</button>
+</div>
+<!-- Dica de Finanças Saudáveis -->
+<div class="p-4 rounded-xl bg-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-xl shrink-0 mt-0.5">tips_and_updates</span>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Equilíbrio Confortável:</strong> Este novo valor representa cerca de 14% da renda líquida conjunta mensal de vocês, mantendo a reserva líquida sem sobressaltos.
+        </div>
+</div>
+</section>
+<!-- Objetivos Atuais & Projeção Temporal (7 Colunas) -->
+<section class="lg:col-span-7 flex flex-col gap-6">
+<!-- Cabeçalho das Metas em Curso -->
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface tracking-tight">Metas Ativas</h2>
+<p class="text-body-sm font-body-sm text-secondary">Acompanhamento e velocidade de conquista</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-surface-container rounded-lg text-label-sm font-label-sm text-secondary hover:text-on-surface font-medium transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+            Filtrar
+          </button>
+</div>
+</div>
+<!-- Cards de Objetivos Atuais -->
+<div class="flex flex-col gap-4">
+<!-- Card 1: Eurotrip Toscana & Roma -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">flight</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Eurotrip Toscana & Roma</h3>
+<span class="px-2 py-0.5 bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold rounded-full">Casal</span>
+</div>
+<p class="text-label-sm font-label-sm text-secondary">Faltam 6 meses • Alvo: Outubro 2025</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:justify-end">
+<!-- Radial Progress Circular -->
+<div class="relative w-14 h-14 flex items-center justify-center shrink-0">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="68, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-label-sm font-label-sm font-bold text-primary">68%</span>
+</div>
+<div class="text-right">
+<div class="text-label-md font-label-md font-semibold text-primary">R$ 15.000</div>
+<div class="text-body-sm font-body-sm text-secondary">de R$ 22.000</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 68%"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-1 bg-surface-container-low px-3 py-2 rounded-lg">
+<span>Aporte mensal necessário: <strong class="text-on-surface">R$ 1.166,00 /mês</strong></span>
+<div class="flex items-center gap-3">
+<span>Lucas: R$ 641</span>
+<span class="text-secondary">•</span>
+<span>Beatriz: R$ 525</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Entrada do Apartamento -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Entrada do Apartamento</h3>
+<span class="px-2 py-0.5 bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold rounded-full">Longo Prazo</span>
+</div>
+<p class="text-label-sm font-label-sm text-secondary">Prazo: 24 meses restantes • Alvo: Março 2027</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:justify-end">
+<!-- Radial Progress Circular -->
+<div class="relative w-14 h-14 flex items-center justify-center shrink-0">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="35, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-label-sm font-label-sm font-bold text-primary">35%</span>
+</div>
+<div class="text-right">
+<div class="text-label-md font-label-md font-semibold text-primary">R$ 28.000</div>
+<div class="text-body-sm font-body-sm text-secondary">de R$ 80.000</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 35%"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-1 bg-surface-container-low px-3 py-2 rounded-lg">
+<span>Aporte mensal necessário: <strong class="text-on-surface">R$ 2.166,00 /mês</strong></span>
+<div class="flex items-center gap-3">
+<span>Lucas: R$ 1.191</span>
+<span class="text-secondary">•</span>
+<span>Beatriz: R$ 975</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Novo Sofá & Reforma da Sala -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">chair</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Novo Sofá & Reforma da Sala</h3>
+<span class="px-2 py-0.5 bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold rounded-full">Quase lá!</span>
+</div>
+<p class="text-label-sm font-label-sm text-secondary">Falta apenas 1 mês • Alvo: Próximo Mês</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:justify-end">
+<!-- Radial Progress Circular -->
+<div class="relative w-14 h-14 flex items-center justify-center shrink-0">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="93, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-label-sm font-label-sm font-bold text-primary">93%</span>
+</div>
+<div class="text-right">
+<div class="text-label-md font-label-md font-semibold text-primary">R$ 5.600</div>
+<div class="text-body-sm font-body-sm text-secondary">de R$ 6.000</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 93%"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-1 bg-surface-container-low px-3 py-2 rounded-lg">
+<span>Resta apenas: <strong class="text-primary">R$ 400,00</strong></span>
+<div class="flex items-center gap-3">
+<span>Lucas: R$ 220</span>
+<span class="text-secondary">•</span>
+<span>Beatriz: R$ 180</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Projeção Patrimonial ao Longo do Tempo -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-md flex flex-col gap-4 mt-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Projeção Patrimonial Conjunta</h3>
+<p class="text-label-sm font-label-sm text-secondary">Evolução estimada com base nos aportes mensais combinados</p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-3 h-1 rounded-full bg-primary-container"></span> Total Acumulado
+            </span>
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="w-3 h-1 rounded-full bg-primary-fixed-dim"></span> Rendimento CDI Estimado
+            </span>
+</div>
+</div>
+<!-- SVG Gráfico Elegante de Tendência -->
+<div class="relative w-full h-44 pt-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 600 140">
+<defs>
+<lineargradient id="curveGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0F5132" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#0F5132" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid horizontal de referência -->
+<line stroke="#E2E8F0" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="600" y1="30" y2="30"></line>
+<line stroke="#E2E8F0" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="600" y1="75" y2="75"></line>
+<line stroke="#E2E8F0" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="600" y1="120" y2="120"></line>
+<!-- Área preenchida -->
+<path d="M 0 120 Q 150 110, 300 70 T 600 15 L 600 140 L 0 140 Z" fill="url(#curveGradient)"></path>
+<!-- Linha Principal de Tendência -->
+<path d="M 0 120 Q 150 110, 300 70 T 600 15" fill="none" stroke="#0F5132" stroke-linecap="round" stroke-width="3"></path>
+<!-- Pontos de Marco -->
+<circle cx="0" cy="120" fill="#0F5132" r="4"></circle>
+<circle cx="300" cy="70" fill="#0F5132" r="4"></circle>
+<circle cx="600" cy="15" fill="#059669" r="5" stroke="#FFFFFF" stroke-width="2"></circle>
+</svg>
+<!-- Marcadores de Eixo X -->
+<div class="flex justify-between items-center text-label-sm font-label-sm text-secondary pt-2">
+<span>Hoje (R$ 48.6k)</span>
+<span>6 Meses (R$ 67.2k)</span>
+<span>12 Meses (R$ 88.5k)</span>
+<span class="font-semibold text-primary">24 Meses (R$ 138k+)</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container text-body-sm font-body-sm text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">auto_graph</span>
+<span>Com os aportes regulares + juros compostos, vocês atingirão todas as metas <strong>3 meses antes</strong> do previsto.</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function() {
+    // Referências aos inputs
+    const amountInput = document.getElementById('goal-amount');
+    const monthsInput = document.getElementById('goal-months');
+    const monthsDisplay = document.getElementById('months-display');
+    const targetDateDisplay = document.getElementById('target-date-display');
+    const totalOutput = document.getElementById('total-monthly-output');
+    const lucasOutput = document.getElementById('lucas-monthly-output');
+    const biaOutput = document.getElementById('bia-monthly-output');
+    const lucasPercentSpan = document.getElementById('lucas-percent');
+    const biaPercentSpan = document.getElementById('bia-percent');
+    const lucasBar = document.getElementById('lucas-bar');
+    const biaBar = document.getElementById('bia-bar');
+
+    const btnProportional = document.getElementById('split-mode-proportional');
+    const btnEqual = document.getElementById('split-mode-equal');
+    const categoryButtons = document.querySelectorAll('.goal-pill');
+
+    let isProportional = true;
+
+    function formatBRL(value) {
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function calculateTargetDate(months) {
+      const now = new Date();
+      now.setMonth(now.getMonth() + parseInt(months, 10));
+      const monthsNames = [
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+      ];
+      return monthsNames[now.getMonth()] + " de " + now.getFullYear();
+    }
+
+    function updateCalculator() {
+      const totalCost = parseFloat(amountInput.value) || 0;
+      const months = parseInt(monthsInput.value, 10) || 1;
+
+      monthsDisplay.textContent = months + (months === 1 ? ' mês' : ' meses');
+      targetDateDisplay.textContent = 'Alvo: ' + calculateTargetDate(months);
+
+      if (totalCost <= 0 || months <= 0) return;
+
+      const monthlyNeeded = totalCost / months;
+      totalOutput.textContent = formatBRL(monthlyNeeded);
+
+      let lucasShare, biaShare;
+      let lucasRate, biaRate;
+
+      if (isProportional) {
+        lucasRate = 0.55;
+        biaRate = 0.45;
+        lucasPercentSpan.textContent = '55%';
+        biaPercentSpan.textContent = '45%';
+        lucasBar.style.width = '55%';
+        biaBar.style.width = '45%';
+      } else {
+        lucasRate = 0.50;
+        biaRate = 0.50;
+        lucasPercentSpan.textContent = '50%';
+        biaPercentSpan.textContent = '50%';
+        lucasBar.style.width = '50%';
+        biaBar.style.width = '50%';
+      }
+
+      lucasShare = monthlyNeeded * lucasRate;
+      biaShare = monthlyNeeded * biaRate;
+
+      lucasOutput.textContent = formatBRL(lucasShare) + ' /mês';
+      biaOutput.textContent = formatBRL(biaShare) + ' /mês';
+    }
+
+    // Alternar proporção
+    btnProportional.addEventListener('click', function() {
+      isProportional = true;
+      btnProportional.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnProportional.classList.remove('text-secondary');
+      btnEqual.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnEqual.classList.add('text-secondary');
+      updateCalculator();
+    });
+
+    btnEqual.addEventListener('click', function() {
+      isProportional = false;
+      btnEqual.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnEqual.classList.remove('text-secondary');
+      btnProportional.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnProportional.classList.add('text-secondary');
+      updateCalculator();
+    });
+
+    // Categoria rápida
+    categoryButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        categoryButtons.forEach(b => {
+          b.classList.remove('active-pill', 'ring-2', 'ring-primary-container', 'text-primary', 'font-semibold');
+          b.classList.add('hover:bg-surface-container-high');
+        });
+        btn.classList.add('active-pill', 'ring-2', 'ring-primary-container', 'text-primary', 'font-semibold');
+        btn.classList.remove('hover:bg-surface-container-high');
+        
+        const cost = btn.getAttribute('data-cost');
+        if (cost) {
+          amountInput.value = cost;
+          updateCalculator();
+        }
+      });
+    });
+
+    amountInput.addEventListener('input', updateCalculator);
+    monthsInput.addEventListener('input', updateCalculator);
+
+    // Inicializar
+    updateCalculator();
+  })();
+</script></main><footer class="fixed bottom-0 left-72 right-0 h-10 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 px-8 flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary-container">lock</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sincronização bancária segura e criptografada (Open Finance Brasil)</span><span class="w-1.5 h-1.5 rounded-full bg-primary-container ml-1"></span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Atualizado há 4 min</span></div><div class="flex items-center gap-6"><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Auditoria Conjunta</span><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Exportar Relatório</span><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Privacidade 50/50</span></div></footer></div></body></html>

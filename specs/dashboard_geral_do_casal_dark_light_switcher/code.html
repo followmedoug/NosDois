@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base{
+  html,body{margin:0;padding:0;}
+  body{overscroll-behavior:none;}
+  main>:first-child{margin-top:0!important;}
+  main>:last-child{margin-bottom:0!important;}
+}
+::-webkit-scrollbar{display:none;}
+
+/* Smooth transitions during theme changes */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *:before,
+html.theme-transition *:after {
+  transition: background-color 300ms ease-out, border-color 300ms ease-out, color 300ms ease-out, fill 300ms ease-out, box-shadow 300ms ease-out !important;
+  transition-delay: 0s !important;
+}
+
+/* Light mode contextual overrides for seamless contrast */
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+html:not(.dark) aside {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) footer {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) main {
+  background-color: #f8fafc !important;
+}
+html:not(.dark) .bg-\[\#161f30\] {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 16px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
+html:not(.dark) .bg-\[\#101726\],
+html:not(.dark) .bg-\[\#111927\] {
+  background-color: #f1f5f9 !important;
+}
+html:not(.dark) .bg-\[\#1a2234\],
+html:not(.dark) .bg-\[\#1e293b\] {
+  background-color: #e2e8f0 !important;
+}
+html:not(.dark) .bg-\[\#0e1624\],
+html:not(.dark) .bg-\[\#0b0f17\] {
+  background-color: #f8fafc !important;
+}
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-800\/80,
+html:not(.dark) .border-slate-800\/60,
+html:not(.dark) .border-slate-800\/50,
+html:not(.dark) .border-slate-700,
+html:not(.dark) .border-slate-700\/60 {
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+html:not(.dark) .text-slate-200 {
+  color: #1e293b !important;
+}
+html:not(.dark) .text-slate-300 {
+  color: #334155 !important;
+}
+html:not(.dark) .text-slate-400 {
+  color: #64748b !important;
+}
+html:not(.dark) .divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .hover\:bg-\[\#1b253a\]:hover {
+  background-color: #f1f5f9 !important;
+}
+html:not(.dark) .hover\:bg-\[\#1e293b\]:hover {
+  background-color: #e2e8f0 !important;
+}
+html:not(.dark) .bg-slate-800,
+html:not(.dark) .bg-slate-800\/90 {
+  background-color: #cbd5e1 !important;
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#001e2c",
+          "surface-container-low": "#131b2c",
+          "on-primary-fixed": "#002113",
+          "error": "#f87171",
+          "outline": "#475569",
+          "primary-container": "#059669",
+          "tertiary-container": "#d97706",
+          "on-secondary-container": "#0284c7",
+          "surface-container-lowest": "#0b0f17",
+          "on-primary-fixed-variant": "#005236",
+          "on-primary": "#ffffff",
+          "outline-variant": "#1e293b",
+          "on-tertiary-fixed-variant": "#653e00",
+          "inverse-on-surface": "#0f172a",
+          "on-surface": "#f8fafc",
+          "error-container": "rgba(239, 68, 68, 0.15)",
+          "tertiary": "#fbbf24",
+          "primary-fixed": "rgba(16, 185, 129, 0.2)",
+          "primary": "#10b981",
+          "on-error": "#ffffff",
+          "surface-container-highest": "#283548",
+          "inverse-primary": "#059669",
+          "on-tertiary": "#472a00",
+          "on-secondary": "#ffffff",
+          "inverse-surface": "#f8fafc",
+          "surface-tint": "#10b981",
+          "on-secondary-fixed-variant": "#004c69",
+          "tertiary-fixed-dim": "#f59e0b",
+          "on-primary-container": "#ffffff",
+          "secondary-fixed": "rgba(56, 189, 248, 0.18)",
+          "background": "#0b0f17",
+          "secondary": "#94a3b8",
+          "on-background": "#f8fafc",
+          "surface-container-high": "#1e293b",
+          "secondary-container": "rgba(14, 165, 233, 0.2)",
+          "on-tertiary-container": "#fef3c7",
+          "tertiary-fixed": "rgba(245, 158, 11, 0.2)",
+          "surface-container": "#161f30",
+          "secondary-fixed-dim": "#38bdf8",
+          "surface": "#0b0f17",
+          "on-error-container": "#fca5a5",
+          "primary-fixed-dim": "#34d399",
+          "surface-variant": "#1a2234",
+          "surface-dim": "#0b0f17",
+          "on-tertiary-fixed": "#fef3c7",
+          "surface-bright": "#222f44",
+          "on-surface-variant": "#cbd5e1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-sm": "0.5rem",
+          "margin-tablet": "1.5rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "gutter-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-md": ["Plus Jakarta Sans"],
+          "currency-display": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "currency-display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-[#0b0f17] font-body-md text-body-md text-on-surface antialiased selection:bg-primary/30 transition-colors duration-300"><aside class="fixed left-0 top-0 h-full w-72 bg-[#131b2c] border-r border-slate-800/80 z-50 flex flex-col justify-between shadow-2xl transition-colors duration-300"><div class="flex flex-col"><div class="h-20 px-6 flex items-center gap-3 border-b border-slate-800/50"><img alt="NósDois Finanças Logo" class="h-8 w-auto object-contain drop-shadow-[0_0_8px_rgba(16,185,129,0.3)]" src="https://lh3.googleusercontent.com/aida/AEtjO1VeEXrSZfPK19XuKdMzswwn-ERqOgALx9mVUNsPBO2dhc-Wu2uqIXncXQ9vB5o4G4Jqky_kukJQCPQkgBRB9B0ZB-jOWgNNkRoLLMqQlVcNw-rh3sPyHnI_nfTnldU58637zI9EOkC7OlzIitoNQ_wqzzKnHGSwI4BE_NlhArKMol0wOzbeDidNrzO874TFepupagtS5nqAPwj4P7EndKcX0Y32Ch8CRv9JPxXCX19G_oGTOZm51RAei4k"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-white tracking-tight flex items-center gap-1.5">NósDois <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#10b981]"></span></span><span class="font-label-sm text-label-sm text-secondary font-medium">Finanças Compartilhadas</span></div></div><div class="px-4 py-3"><div class="p-3 rounded-xl bg-[#1a2234] border border-slate-800 flex items-center gap-3 shadow-md"><div class="w-9 h-9 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-lg">diversity_1</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-white font-semibold">Lucas &amp; Beatriz</span><span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Plano Duo Premium</span></div></div></div><div class="px-6 pt-3 pb-2"><span class="font-label-sm text-label-sm text-slate-400 uppercase tracking-wider font-semibold">Menu Principal</span></div><nav class="px-4 space-y-1 flex flex-col"><a aria-current="page" class="flex items-center gap-3.5 px-3.5 py-2.5 transition-all bg-primary-container text-white font-semibold rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.25)] border border-emerald-400/30" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1e293b] hover:text-white transition-all" data-path="despesas-receitas" href="#"><span class="material-symbols-outlined text-xl">receipt_long</span><span class="font-label-md text-label-md">Despesas &amp; Receitas</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1e293b] hover:text-white transition-all" data-path="carteiras-cartoes" href="#"><span class="material-symbols-outlined text-xl">account_balance_wallet</span><span class="font-label-md text-label-md">Carteiras &amp; Cartões</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1e293b] hover:text-white transition-all" data-path="metas-sonhos" href="#"><span class="material-symbols-outlined text-xl">savings</span><span class="font-label-md text-label-md">Metas &amp; Sonhos</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-[#1e293b] hover:text-white transition-all" data-path="planejamento-orcamento" href="#"><span class="material-symbols-outlined text-xl">pie_chart</span><span class="font-label-md text-label-md">Planejamento &amp; Orçamento</span></a></nav></div><div class="p-4 flex flex-col gap-2.5"><div class="p-3.5 rounded-xl bg-[#161f30] border border-slate-800 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-slate-300 font-medium">Fechamento Mensal</span><span class="font-label-sm text-label-sm text-primary font-semibold">78%</span></div><div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-primary rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style="width: 78%"></div></div><span class="font-label-sm text-label-sm text-slate-400">Orçamento sob controle</span></div><!-- Interactive Dark / Light Mode Switcher in Sidebar --><button class="px-2.5 py-2 rounded-xl bg-[#0e1624] hover:bg-[#1a2234] border border-slate-800/80 flex items-center justify-between transition-all group w-full text-left" id="sidebar-theme-toggle" title="Alternar tema"><div class="flex items-center gap-2 text-slate-300 group-hover:text-white"><span class="material-symbols-outlined text-base text-amber-400 transition-transform duration-300 group-hover:rotate-12" id="sidebar-theme-icon">dark_mode</span><span class="font-label-sm text-label-sm" id="sidebar-theme-text">Modo Escuro</span></div><span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30 font-label-sm text-[10px] font-bold tracking-wide transition-colors" id="sidebar-theme-badge">ATIVO</span></button><div class="flex items-center justify-between px-2 pt-1 text-slate-400"><div class="flex items-center gap-1.5 hover:text-slate-200 cursor-pointer transition-colors"><span class="material-symbols-outlined text-base">help_outline</span><span class="font-label-sm text-label-sm">Suporte</span></div><div class="flex items-center gap-1.5 hover:text-slate-200 cursor-pointer transition-colors"><span class="material-symbols-outlined text-base">settings</span><span class="font-label-sm text-label-sm">Ajustes</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-[#0b0f17]/90 backdrop-blur-xl border-b border-slate-800/80 z-40 px-8 flex items-center justify-between transition-colors duration-300"><div class="flex items-center gap-4"><div class="bg-[#161f30] p-1 rounded-full flex items-center gap-1 border border-slate-800 shadow-inner"><button class="px-3.5 py-1.5 rounded-full bg-primary-container text-white font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1.5 shadow-md shadow-emerald-950/40"><span class="material-symbols-outlined text-sm">join_inner</span>Visão Conjunta (NósDois)</button><button class="px-3.5 py-1.5 rounded-full text-slate-400 hover:text-white font-label-sm text-label-sm font-medium transition-all">Lucas</button><button class="px-3.5 py-1.5 rounded-full text-slate-400 hover:text-white font-label-sm text-label-sm font-medium transition-all">Beatriz</button></div></div><div class="flex items-center gap-4"><!-- Interactive Sun / Moon Toggle in Header --><div aria-label="Alternar Tema Claro e Escuro" class="flex items-center gap-1 bg-[#161f30] border border-slate-800 p-1 rounded-xl shadow-sm" id="header-theme-toggle" role="group"><button class="p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800/60 transition-all flex items-center justify-center relative" id="btn-light-theme" title="Ativar Modo Claro"><span class="material-symbols-outlined text-base transition-transform duration-300">light_mode</span></button><button class="p-1.5 rounded-lg bg-[#1e293b] text-primary border border-slate-700 shadow-sm transition-all flex items-center justify-center relative" id="btn-dark-theme" title="Ativar Modo Escuro"><span class="material-symbols-outlined text-base transition-transform duration-300">dark_mode</span></button></div><button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-emerald-400 text-slate-950 font-label-md text-label-md font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]"><span class="material-symbols-outlined text-lg">add</span><span>Nova Despesa / Receita</span></button><div class="h-6 w-px bg-slate-800"></div><button class="relative p-2 rounded-xl text-slate-400 hover:bg-[#1e293b] hover:text-white transition-all"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 shadow-[0_0_6px_#f43f5e]"></span></button><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-white font-semibold leading-tight">Lucas &amp; Beatriz</span><span class="font-label-sm text-label-sm text-primary font-semibold">Premium Ativo</span></div><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary/60 shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB1vnKOtX_iO5sUDmdfKAcIq_M1yYauB2WXtZ49aMFLhsgW6uKYiWwH1zQS3ionBlTITIDZ6kje1r2WK5K9kyC0J_yZADbkyh5rl3nMcZKUennrHSuWY5V0zqjy2LlejOWrv2NRu_pJ-y51kAyZs6APigOWVdjbS0SA4wBwlHjFksvGU6h4hfdMCvhCLCvJncpacsl8hXm75j-bJ-NmEyt38q4M5NDKlx_oxbsuwguCnctFvS4gRHYPw"/></div></div></header><main class="relative pt-20 flex-1 bg-[#0b0f17] w-full px-8 pb-16 transition-colors duration-300"><div class="flex flex-col w-full">
+<!-- Top Welcome & Monthly Executive Pulse -->
+<section class="mb-8 pt-4">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 pb-2">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#10b981] animate-pulse"></span>
+            Finanças Conectadas
+          </span>
+<span class="text-secondary font-body-sm text-body-sm">• Última sincronização bancária às 09:42</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-white tracking-tight">Bom dia, Lucas &amp; Beatriz</h1>
+<p class="font-body-md text-body-md text-secondary">
+          Visão consolidada da saúde financeira do casal para o ciclo vigente.
+        </p>
+</div>
+<!-- Controls & Health Pulse Badge -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Period Selector Pill -->
+<div class="flex items-center gap-2 bg-[#161f30] border border-slate-800 px-3.5 py-2 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg">calendar_month</span>
+<span class="font-label-md text-label-md text-white font-semibold">Novembro 2024</span>
+<span class="material-symbols-outlined text-secondary text-sm">expand_more</span>
+</div>
+<!-- Equilibrium Pill Indicator -->
+<div class="flex items-center gap-3 px-4 py-2 rounded-xl bg-[#161f30] border border-slate-800 shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-primary/20 shadow-[0_0_8px_#10b981]"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Diagnóstico</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Equilíbrio Saudável • 82% no alvo</span>
+</div>
+</div>
+<!-- Quick Statement Download -->
+<button class="p-2 rounded-xl bg-[#161f30] border border-slate-800 text-secondary hover:text-white hover:bg-[#1e293b] transition-colors shadow-sm" title="Baixar Extrato Mensal">
+<span class="material-symbols-outlined text-xl">file_download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4 Core Metric KPI Blocks -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
+<!-- KPI 1: Entradas do Mês -->
+<div class="relative overflow-hidden rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Entradas do Mês</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-white">R$ 18.450</span>
+<span class="font-label-md text-label-md text-secondary font-medium">,00</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary/15 border border-primary/30 text-primary flex items-center justify-center shadow-[0_0_12px_rgba(16,185,129,0.2)]">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+</div>
+</div>
+<div class="mt-4 pt-4 bg-[#101726] border-t border-slate-800/60 -mx-6 -mb-6 px-6 pb-4">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-primary mb-2">
+<span class="flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">arrow_upward</span> +8% vs Outubro
+          </span>
+<span class="text-secondary font-normal">Aportes combinados</span>
+</div>
+<!-- Split details Lucas & Bia -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-slate-400">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            Lucas: <strong class="text-slate-200 font-semibold">R$ 10.200</strong>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            Bia: <strong class="text-slate-200 font-semibold">R$ 8.250</strong>
+</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: Saídas Totais -->
+<div class="relative overflow-hidden rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Saídas Totais</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-white">R$ 9.840</span>
+<span class="font-label-md text-label-md text-secondary font-medium">,00</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">payments</span>
+</div>
+</div>
+<div class="mt-4 pt-4 bg-[#101726] border-t border-slate-800/60 -mx-6 -mb-6 px-6 pb-4">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-1.5">
+<span class="text-secondary font-medium">53% da renda familiar</span>
+<span class="text-emerald-400 font-semibold">Teto: R$ 11.000</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-rose-400 rounded-full" style="width: 53%;"></div>
+</div>
+<span class="block mt-2 font-label-sm text-label-sm text-primary font-semibold">Dentro do planejado seguro</span>
+</div>
+</div>
+<!-- KPI 3: Guardado / Investido -->
+<div class="relative overflow-hidden rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Guardado / Investido</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-primary">R$ 5.200</span>
+<span class="font-label-md text-label-md text-secondary font-medium">,00</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">savings</span>
+</div>
+</div>
+<div class="mt-4 pt-4 bg-[#101726] border-t border-slate-800/60 -mx-6 -mb-6 px-6 pb-4">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-1.5">
+<span class="text-secondary font-medium">Taxa de Poupança Casal</span>
+<span class="text-primary font-semibold">28% Realizado</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-emerald-500 to-primary rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style="width: 93%;"></div>
+</div>
+<span class="block mt-2 font-label-sm text-label-sm text-secondary font-medium">Meta mensal: R$ 5.500 (94.5%)</span>
+</div>
+</div>
+<!-- KPI 4: Saldo Livre Restante -->
+<div class="relative overflow-hidden rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Saldo Livre / Lazer</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-white">R$ 3.410</span>
+<span class="font-label-md text-label-md text-secondary font-medium">,00</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">beach_access</span>
+</div>
+</div>
+<div class="mt-4 pt-4 bg-[#101726] border-t border-slate-800/60 -mx-6 -mb-6 px-6 pb-4">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary">Disponível p/ 12 dias</span>
+<span class="text-primary font-semibold">R$ 284/dia</span>
+</div>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+<span class="font-label-sm text-label-sm text-secondary">Sem risco de endividamento</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Budget Alert and Analytical Breakdown Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+<!-- Attention Banner / Weight Highlight Card (5 cols) -->
+<div class="lg:col-span-5 rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">warning</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-white">Atenção ao Orçamento</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 font-label-sm text-label-sm font-semibold">
+            +12% acima
+          </span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-5">
+          Uma categoria ultrapassou o teto flexível estipulado na reunião financeira de início de mês.
+        </p>
+<!-- Focus Breakdown Card -->
+<div class="p-4 rounded-xl bg-[#111927] border border-slate-800 mb-5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#1e293b] text-primary flex items-center justify-center border border-slate-700/60">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-white block">Supermercado &amp; Feira</span>
+<span class="font-body-sm text-body-sm text-secondary">Consumiu 34% dos gastos totais</span>
+</div>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">Valor Gasto Atual</span>
+<span class="font-headline-md text-headline-md text-rose-400 font-bold">R$ 3.345,60</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-secondary block">Teto Acordado</span>
+<span class="font-label-md text-label-md text-slate-200 font-semibold">R$ 2.980,00</span>
+</div>
+</div>
+<!-- Progress bar -->
+<div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-rose-500 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.4)]" style="width: 100%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-slate-400">Excesso acumulado: <strong class="text-rose-400 font-semibold">+R$ 365,60</strong> (compras atípicas de adega e empório).</span>
+</div>
+</div>
+<!-- Action pill -->
+<div class="pt-2 flex items-center justify-between border-t border-slate-800/80">
+<span class="font-label-sm text-label-sm text-secondary">Compensar com verba de 'Lazer'?</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-emerald-400 text-slate-950 font-label-sm text-label-sm font-bold transition-all shadow-[0_0_12px_rgba(16,185,129,0.3)]">
+          Ajustar Distribuição
+        </button>
+</div>
+</div>
+<!-- Category Expenditure Chart (7 cols) -->
+<div class="lg:col-span-7 rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white">Divisão por Categoria</h2>
+<span class="font-body-sm text-body-sm text-secondary">Mapeamento proporcional dos desembolsos em Novembro</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary">Total:</span>
+<span class="font-label-md text-label-md text-white font-semibold">R$ 9.840,00</span>
+</div>
+</div>
+<!-- High polish horizontal comparative bar representation -->
+<div class="space-y-4 my-2">
+<!-- Item 1: Alimentação (34%) -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 text-slate-200 font-medium">
+<span class="material-symbols-outlined text-base text-rose-400">restaurant</span>
+              Alimentação &amp; Mercado
+            </span>
+<span class="text-slate-200 font-semibold">R$ 3.345,60 <span class="text-secondary font-normal">(34%)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-slate-800/90 overflow-hidden">
+<div class="h-full bg-rose-500 rounded-full transition-all duration-500" style="width: 34%;"></div>
+</div>
+</div>
+<!-- Item 2: Moradia (28%) -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 text-slate-200 font-medium">
+<span class="material-symbols-outlined text-base text-primary">apartment</span>
+              Moradia (Aluguel, Luz, Condomínio)
+            </span>
+<span class="text-slate-200 font-semibold">R$ 2.755,20 <span class="text-secondary font-normal">(28%)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-slate-800/90 overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]" style="width: 28%;"></div>
+</div>
+</div>
+<!-- Item 3: Lazer (15%) -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 text-slate-200 font-medium">
+<span class="material-symbols-outlined text-base text-amber-400">celebration</span>
+              Lazer &amp; Experiências a Dois
+            </span>
+<span class="text-slate-200 font-semibold">R$ 1.476,00 <span class="text-secondary font-normal">(15%)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-slate-800/90 overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 15%;"></div>
+</div>
+</div>
+<!-- Item 4: Transporte (12%) -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 text-slate-200 font-medium">
+<span class="material-symbols-outlined text-base text-sky-400">directions_car</span>
+              Transporte &amp; Combustível
+            </span>
+<span class="text-slate-200 font-semibold">R$ 1.180,80 <span class="text-secondary font-normal">(12%)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-slate-800/90 overflow-hidden">
+<div class="h-full bg-sky-400 rounded-full transition-all duration-500" style="width: 12%;"></div>
+</div>
+</div>
+<!-- Item 5: Saúde & Assinaturas (11%) -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 text-slate-200 font-medium">
+<span class="material-symbols-outlined text-base text-purple-400">health_and_safety</span>
+              Saúde, Farmácia &amp; Assinaturas
+            </span>
+<span class="text-slate-200 font-semibold">R$ 1.082,40 <span class="text-secondary font-normal">(11%)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-slate-800/90 overflow-hidden">
+<div class="h-full bg-purple-400 rounded-full transition-all duration-500" style="width: 11%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between text-body-sm font-body-sm text-secondary border-t border-slate-800/80">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">verified</span>
+          Todos os lançamentos categorizados com tag de responsabilidade
+        </span>
+<a class="font-label-sm text-label-sm text-primary hover:text-emerald-300 font-semibold hover:underline" href="#">Ver Gráfico Detalhado</a>
+</div>
+</div>
+</section>
+<!-- Credit Cards Snapshot & Next Dream Goal -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+<!-- Credit Cards Section (8 cols) -->
+<div class="lg:col-span-8 rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white">Cartões de Crédito</h2>
+<span class="font-body-sm text-body-sm text-secondary">Monitoramento sincronizado de limites e faturas em aberto</span>
+</div>
+<button class="flex items-center gap-1 text-primary hover:text-emerald-300 font-label-sm text-label-sm font-semibold hover:underline">
+<span class="material-symbols-outlined text-base">credit_card</span> Gerenciar Limites
+        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1: Black Conjunto -->
+<div class="rounded-xl p-4 bg-[#111927] border border-slate-800 flex flex-col justify-between relative group hover:border-slate-700 transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700 text-white flex items-center justify-center font-bold text-xs shadow-inner">
+                MC
+              </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white font-semibold leading-tight">Black Conjunto</span>
+<span class="font-label-sm text-label-sm text-secondary">C6 Carbon • 8831</span>
+</div>
+</div>
+<!-- Badge Conjunto -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/20 border border-primary/30 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">group</span> 50/50
+            </span>
+</div>
+<div class="my-2">
+<span class="font-label-sm text-label-sm text-secondary block">Fatura Atual</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-white font-bold">R$ 3.420</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">,00</span>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary mb-1">
+<span>Limite R$ 25.000</span>
+<span class="text-rose-400 font-semibold">Fecha em 5 dias</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-slate-400 rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: XP Lucas -->
+<div class="rounded-xl p-4 bg-[#111927] border border-slate-800 flex flex-col justify-between relative group hover:border-slate-700 transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-[#1e293b] border border-slate-700 text-sky-400 flex items-center justify-center font-bold text-xs">
+                XP
+              </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white font-semibold leading-tight">Visa Infinite</span>
+<span class="font-label-sm text-label-sm text-secondary">XP Invest • 4012</span>
+</div>
+</div>
+<!-- Badge Dele -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-500/20 border border-sky-500/30 text-sky-300 font-label-sm text-label-sm font-semibold">
+              Lucas
+            </span>
+</div>
+<div class="my-2">
+<span class="font-label-sm text-label-sm text-secondary block">Fatura Atual</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-white font-bold">R$ 1.850</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">,00</span>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary mb-1">
+<span>Limite R$ 18.000</span>
+<span>Fecha em 12 dias</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: Nubank Ultravioleta Beatriz -->
+<div class="rounded-xl p-4 bg-[#111927] border border-slate-800 flex flex-col justify-between relative group hover:border-slate-700 transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-purple-950 border border-purple-800 text-purple-300 flex items-center justify-center font-bold text-xs">
+                NU
+              </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white font-semibold leading-tight">Ultravioleta</span>
+<span class="font-label-sm text-label-sm text-secondary">Nubank • 7234</span>
+</div>
+</div>
+<!-- Badge Dela -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 font-label-sm text-label-sm font-semibold">
+              Beatriz
+            </span>
+</div>
+<div class="my-2">
+<span class="font-label-sm text-label-sm text-secondary block">Fatura Atual</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-white font-bold">R$ 1.680</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">,00</span>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary mb-1">
+<span>Limite R$ 22.000</span>
+<span>Fecha em 18 dias</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full" style="width: 8%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Goal Showcase: Viagem Itália (4 cols) -->
+<div class="lg:col-span-4 rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg flex flex-col justify-between relative overflow-hidden">
+<!-- Decorative background blur element -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">flight_takeoff</span>
+            Meta Mais Próxima
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary/20 border border-primary/30 text-primary font-label-sm text-label-sm font-semibold">
+            68% Concluída
+          </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white">Viagem para a Costa Amalfitana</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+          Previsto para Maio/2025. Guardando R$ 800 cada mensalmente.
+        </p>
+<!-- Visual representation of target destination -->
+<div class="mt-4 mb-4 h-24 rounded-xl overflow-hidden relative shadow-inner border border-slate-700/60">
+<img class="w-full h-full object-cover filter brightness-90 contrast-105" data-alt="Scenic cliffside village along Italy Amalfi Coast overlooking the turquoise Mediterranean Sea in warm sunny afternoon light, calm aesthetic atmosphere, editorial travel photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr8z31_-tRMlPxRPmI6KIfFUqWRSsJOji32vr6qtz-TdLjlmhjLuD7jbCHnKpQ0IgPubIusiaUQx99OUfqun1-tr6PHuFp3EYnOUSvSdMbECiIUBKOGDM15TKCFPyF-6QGLkqh_xDV1t2epYrwGyydJy7nNh3l5YWzMtlbRCZjvZf4weJIhqTCOa0lu1KMpx5IPB1seP1-ZdrHdALvCeR8n-LRo5tT2ZMKKMY3rY9BGIbBH94fLaLO_w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent flex items-end p-2.5">
+<span class="font-label-sm text-label-sm text-white font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">pin_drop</span> Positano, Itália
+            </span>
+</div>
+</div>
+<!-- Progress numbers -->
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-headline-sm text-headline-sm text-white font-bold">R$ 13.600</span>
+<span class="font-body-sm text-body-sm text-secondary">Alvo: R$ 20.000</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-emerald-500 to-primary rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style="width: 68%;"></div>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-slate-800/80">
+<span class="font-label-sm text-label-sm text-secondary">
+          Faltam apenas <strong class="text-white font-semibold">R$ 6.400</strong>
+</span>
+<button class="px-3.5 py-1.5 rounded-xl bg-[#1e293b] text-white hover:bg-slate-700 transition-colors border border-slate-700 font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">add</span> Aportar
+        </button>
+</div>
+</div>
+</section>
+<!-- Feed / Table: Últimas Movimentações Financeiras -->
+<section class="rounded-xl bg-[#161f30] border border-slate-800/80 p-6 shadow-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white">Últimas Despesas e Entradas</h2>
+<span class="font-body-sm text-body-sm text-secondary">Transações registradas automaticamente e via conciliação rápida</span>
+</div>
+<!-- Quick filter toggles -->
+<div class="flex items-center gap-2">
+<div class="bg-[#111927] p-1 rounded-xl flex items-center text-label-sm font-label-sm border border-slate-800">
+<button class="px-3 py-1 rounded-lg bg-[#1e293b] text-white font-semibold shadow-sm border border-slate-700">Todas</button>
+<button class="px-3 py-1 rounded-lg text-secondary hover:text-white transition-colors">Do Casal</button>
+<button class="px-3 py-1 rounded-lg text-secondary hover:text-white transition-colors">Lucas</button>
+<button class="px-3 py-1 rounded-lg text-secondary hover:text-white transition-colors">Beatriz</button>
+</div>
+<button class="p-2 rounded-xl bg-[#111927] border border-slate-800 text-secondary hover:text-white hover:bg-[#1e293b] transition-colors" title="Filtrar">
+<span class="material-symbols-outlined text-lg">tune</span>
+</button>
+</div>
+</div>
+<!-- Table content -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#101726] text-secondary font-label-sm text-label-sm uppercase tracking-wider rounded-xl border-y border-slate-800/80">
+<th class="py-3 px-4 rounded-l-xl font-semibold">Descrição &amp; Categoria</th>
+<th class="py-3 px-4 font-semibold">Quem Pagou</th>
+<th class="py-3 px-4 font-semibold">Conta / Cartão</th>
+<th class="py-3 px-4 font-semibold">Data</th>
+<th class="py-3 px-4 text-right font-semibold">Valor</th>
+<th class="py-3 px-4 rounded-r-xl text-center font-semibold">Ação</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-800/60 text-body-sm font-body-sm text-slate-300">
+<!-- Row 1: Supermercado (Casal) -->
+<tr class="hover:bg-[#1b253a] transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">local_grocery_store</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-white leading-tight truncate">Pão de Açúcar - Compras Semanais</span>
+<span class="font-body-sm text-body-sm text-secondary">Alimentação • Supermercado</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">group</span> Conjunto (50/50)
+              </span>
+</td>
+<td class="py-4 px-4 text-slate-400">
+              Black Conjunto • 8831
+            </td>
+<td class="py-4 px-4 text-slate-400">
+              Hoje, 14:20
+            </td>
+<td class="py-4 px-4 text-right">
+<span class="font-headline-sm text-headline-sm text-rose-400 font-semibold">- R$ 482,50</span>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="p-1.5 rounded-lg text-secondary hover:text-white hover:bg-slate-800 transition-colors" title="Editar divisão">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Salário Receita Lucas -->
+<tr class="hover:bg-[#1b253a] transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/20 border border-primary/30 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-white leading-tight truncate">Salário Mensal Lucas</span>
+<span class="font-body-sm text-body-sm text-secondary">Receita • Proventos Fixos</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-sky-500/20 border border-sky-500/30 text-sky-300 font-label-sm text-label-sm font-semibold">
+                Lucas
+              </span>
+</td>
+<td class="py-4 px-4 text-slate-400">
+              Conta Corrente Itaú
+            </td>
+<td class="py-4 px-4 text-slate-400">
+              Ontem, 08:00
+            </td>
+<td class="py-4 px-4 text-right">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">+ R$ 10.200,00</span>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="p-1.5 rounded-lg text-secondary hover:text-white hover:bg-slate-800 transition-colors" title="Detalhes do provento">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Restaurante Jantar a Dois (Beatriz Pagou p/ Casal) -->
+<tr class="hover:bg-[#1b253a] transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">wine_bar</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-white leading-tight truncate">Restaurante Manioca (Jantar Comemoração)</span>
+<span class="font-body-sm text-body-sm text-secondary">Lazer • Restaurantes</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 font-label-sm text-label-sm font-semibold">
+                Beatriz (Divisão 50/50)
+              </span>
+</td>
+<td class="py-4 px-4 text-slate-400">
+              Nubank UV • 7234
+            </td>
+<td class="py-4 px-4 text-slate-400">
+              15 Nov, 21:40
+            </td>
+<td class="py-4 px-4 text-right">
+<span class="font-headline-sm text-headline-sm text-rose-400 font-semibold">- R$ 390,00</span>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="p-1.5 rounded-lg text-secondary hover:text-white hover:bg-slate-800 transition-colors" title="Reembolsar metade">
+<span class="material-symbols-outlined text-lg">splitscreen</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Aporte Investimento Meta Casal -->
+<tr class="hover:bg-[#1b253a] transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">trending_up</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-white leading-tight truncate">Aporte Fundo Viagem Itália</span>
+<span class="font-body-sm text-body-sm text-secondary">Investimento • Tesouro Selic 2029</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">group</span> Conjunto
+              </span>
+</td>
+<td class="py-4 px-4 text-slate-400">
+              XP Investimentos Duo
+            </td>
+<td class="py-4 px-4 text-slate-400">
+              14 Nov, 10:15
+            </td>
+<td class="py-4 px-4 text-right">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">R$ 1.600,00</span>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="p-1.5 rounded-lg text-secondary hover:text-white hover:bg-slate-800 transition-colors" title="Editar investimento">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Uber Trabalho Lucas (Individual) -->
+<tr class="hover:bg-[#1b253a] transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">directions_car</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-white leading-tight truncate">Uber Trips - Reunião Externa</span>
+<span class="font-body-sm text-body-sm text-secondary">Transporte • Individual</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-sky-500/20 border border-sky-500/30 text-sky-300 font-label-sm text-label-sm font-semibold">
+                Lucas (100%)
+              </span>
+</td>
+<td class="py-4 px-4 text-slate-400">
+              XP Visa • 4012
+            </td>
+<td class="py-4 px-4 text-slate-400">
+              13 Nov, 17:30
+            </td>
+<td class="py-4 px-4 text-right">
+<span class="font-headline-sm text-headline-sm text-rose-400 font-semibold">- R$ 42,90</span>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="p-1.5 rounded-lg text-secondary hover:text-white hover:bg-slate-800 transition-colors" title="Ajustar">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Feed bottom bar with quick add & pagination link -->
+<div class="mt-4 pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-secondary font-body-sm text-body-sm border-t border-slate-800/80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">sync</span>
+<span>Exibindo 5 de 48 lançamentos deste mês</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="font-label-md text-label-md text-primary hover:text-emerald-300 font-semibold hover:underline flex items-center gap-1" href="#">
+          Ver Histórico Completo de Novembro
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</div></main><footer class="fixed bottom-0 left-72 right-0 h-10 bg-[#0d131f]/95 backdrop-blur-md border-t border-slate-800/80 z-30 px-8 flex items-center justify-between text-slate-400 transition-colors duration-300"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">lock</span><span class="font-label-sm text-label-sm text-slate-400">Sincronização bancária segura e criptografada (Open Finance Brasil)</span><span class="w-1.5 h-1.5 rounded-full bg-primary ml-1 shadow-[0_0_6px_#10b981]"></span><span class="font-label-sm text-label-sm text-primary font-semibold">Atualizado há 4 min</span></div><div class="flex items-center gap-6"><span class="font-label-sm text-label-sm text-slate-400 hover:text-slate-200 cursor-pointer transition-colors">Auditoria Conjunta</span><span class="font-label-sm text-label-sm text-slate-400 hover:text-slate-200 cursor-pointer transition-colors">Exportar Relatório</span><span class="font-label-sm text-label-sm text-slate-400 hover:text-slate-200 cursor-pointer transition-colors">Privacidade 50/50</span></div></footer></div>
+<script>
+  (function initTheme() {
+    const THEME_STORAGE_KEY = 'nosdois_financas_theme';
+    const htmlEl = document.documentElement;
+
+    // Header buttons
+    const btnLight = document.getElementById('btn-light-theme');
+    const btnDark = document.getElementById('btn-dark-theme');
+
+    // Sidebar elements
+    const sidebarToggle = document.getElementById('sidebar-theme-toggle');
+    const sidebarIcon = document.getElementById('sidebar-theme-icon');
+    const sidebarText = document.getElementById('sidebar-theme-text');
+    const sidebarBadge = document.getElementById('sidebar-theme-badge');
+
+    // Get current theme preference (localStorage > system preference > default 'dark')
+    function getPreferredTheme() {
+      const stored = localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        return stored;
+      }
+      return 'dark';
+    }
+
+    function applyTheme(theme, animate = true) {
+      if (animate) {
+        htmlEl.classList.add('theme-transition');
+      }
+
+      if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        htmlEl.classList.remove('light');
+        localStorage.setItem(THEME_STORAGE_KEY, 'dark');
+
+        // Header controls state
+        if (btnDark && btnLight) {
+          btnDark.className = 'p-1.5 rounded-lg bg-[#1e293b] text-primary border border-slate-700 shadow-sm transition-all flex items-center justify-center relative';
+          btnDark.title = 'Modo Escuro Ativo';
+          btnLight.className = 'p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800/60 transition-all flex items-center justify-center relative';
+          btnLight.title = 'Alternar para Modo Claro';
+        }
+
+        // Sidebar status widget
+        if (sidebarIcon && sidebarText && sidebarBadge) {
+          sidebarIcon.textContent = 'dark_mode';
+          sidebarIcon.className = 'material-symbols-outlined text-base text-amber-400 transition-transform duration-300';
+          sidebarText.textContent = 'Modo Escuro';
+          sidebarBadge.textContent = 'ATIVO';
+          sidebarBadge.className = 'px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30 font-label-sm text-[10px] font-bold tracking-wide transition-colors';
+        }
+      } else {
+        htmlEl.classList.remove('dark');
+        htmlEl.classList.add('light');
+        localStorage.setItem(THEME_STORAGE_KEY, 'light');
+
+        // Header controls state
+        if (btnDark && btnLight) {
+          btnLight.className = 'p-1.5 rounded-lg bg-white text-amber-500 border border-slate-300 shadow-sm transition-all flex items-center justify-center relative';
+          btnLight.title = 'Modo Claro Ativo';
+          btnDark.className = 'p-1.5 rounded-lg text-slate-400 hover:text-primary hover:bg-slate-200/70 transition-all flex items-center justify-center relative';
+          btnDark.title = 'Alternar para Modo Escuro';
+        }
+
+        // Sidebar status widget
+        if (sidebarIcon && sidebarText && sidebarBadge) {
+          sidebarIcon.textContent = 'light_mode';
+          sidebarIcon.className = 'material-symbols-outlined text-base text-amber-500 transition-transform duration-300';
+          sidebarText.textContent = 'Modo Claro';
+          sidebarBadge.textContent = 'ATIVO';
+          sidebarBadge.className = 'px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-600 border border-amber-500/30 font-label-sm text-[10px] font-bold tracking-wide transition-colors';
+        }
+      }
+
+      if (animate) {
+        window.clearTimeout(window.__themeTransitionTimeout);
+        window.__themeTransitionTimeout = window.setTimeout(() => {
+          htmlEl.classList.remove('theme-transition');
+        }, 320);
+      }
+    }
+
+    // Attach event listeners
+    if (btnLight) {
+      btnLight.addEventListener('click', (e) => {
+        e.preventDefault();
+        applyTheme('light', true);
+      });
+    }
+
+    if (btnDark) {
+      btnDark.addEventListener('click', (e) => {
+        e.preventDefault();
+        applyTheme('dark', true);
+      });
+    }
+
+    if (sidebarToggle) {
+      sidebarToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isCurrentDark = htmlEl.classList.contains('dark');
+        applyTheme(isCurrentDark ? 'light' : 'dark', true);
+      });
+    }
+
+    // Initialize on load
+    applyTheme(getPreferredTheme(), false);
+  })();
+</script></body></html>

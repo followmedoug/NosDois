@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed-dim": "#bec6e0",
+          "outline-variant": "#c0c9c0",
+          "on-surface-variant": "#404942",
+          "secondary-container": "#dae2fd",
+          "on-error": "#ffffff",
+          "surface-bright": "#f8f9ff",
+          "primary": "#003820",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "inverse-surface": "#213145",
+          "secondary": "#565e74",
+          "inverse-on-surface": "#eaf1ff",
+          "on-primary-fixed-variant": "#0f5132",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tertiary": "#1000a8",
+          "on-tertiary-fixed-variant": "#2f2ebe",
+          "outline": "#707971",
+          "surface-tint": "#2d6a48",
+          "on-primary-fixed": "#002111",
+          "on-tertiary": "#ffffff",
+          "on-secondary-fixed": "#131b2e",
+          "background": "#f8f9ff",
+          "primary-fixed-dim": "#95d4ac",
+          "surface-container-high": "#dce9ff",
+          "tertiary-container": "#2e2dbe",
+          "on-tertiary-container": "#abadff",
+          "on-error-container": "#93000a",
+          "tertiary-fixed": "#e1e0ff",
+          "surface-container": "#e5eeff",
+          "on-secondary-container": "#5c647a",
+          "inverse-primary": "#95d4ac",
+          "surface": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-fixed-dim": "#c0c1ff",
+          "primary-fixed": "#b0f1c7",
+          "on-secondary-fixed-variant": "#3f465c",
+          "on-primary-container": "#84c39b",
+          "secondary-fixed": "#dae2fd",
+          "surface-container-highest": "#d3e4fe",
+          "on-tertiary-fixed": "#07006c",
+          "surface-dim": "#cbdbf5",
+          "surface-variant": "#d3e4fe",
+          "surface-container-low": "#eff4ff",
+          "primary-container": "#0f5132",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "margin": "2rem",
+          "space-xl": "2.5rem",
+          "space-sm": "0.5rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-md": ["Plus Jakarta Sans"],
+          "currency-display": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "currency-display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 px-6 flex items-center gap-3"><img alt="NósDois Finanças Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VeEXrSZfPK19XuKdMzswwn-ERqOgALx9mVUNsPBO2dhc-Wu2uqIXncXQ9vB5o4G4Jqky_kukJQCPQkgBRB9B0ZB-jOWgNNkRoLLMqQlVcNw-rh3sPyHnI_nfTnldU58637zI9EOkC7OlzIitoNQ_wqzzKnHGSwI4BE_NlhArKMol0wOzbeDidNrzO874TFepupagtS5nqAPwj4P7EndKcX0Y32Ch8CRv9JPxXCX19G_oGTOZm51RAei4k"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">NósDois</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Finanças Compartilhadas</span></div></div><div class="px-4 py-2"><div class="p-3 rounded-xl bg-surface-container-lowest flex items-center gap-3 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-lg">diversity_1</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold">Lucas & Beatriz</span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Plano Duo Premium</span></div></div></div><div class="px-6 pt-4 pb-2"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Menu Principal</span></div><nav class="px-4 space-y-1 flex flex-col" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a aria-current="page" class="flex items-center gap-3.5 px-3.5 py-2.5 transition-all bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="despesas-receitas" href="#"><span class="material-symbols-outlined text-xl">receipt_long</span><span class="font-label-md text-label-md">Despesas & Receitas</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="carteiras-cartoes" href="#"><span class="material-symbols-outlined text-xl">account_balance_wallet</span><span class="font-label-md text-label-md">Carteiras & Cartões</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="metas-sonhos" href="#"><span class="material-symbols-outlined text-xl">savings</span><span class="font-label-md text-label-md">Metas & Sonhos</span></a><a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="planejamento-orcamento" href="#"><span class="material-symbols-outlined text-xl">pie_chart</span><span class="font-label-md text-label-md">Planejamento & Orçamento</span></a></nav></div><div class="p-4 flex flex-col gap-2"><div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary font-medium">Fechamento Mensal</span><span class="font-label-sm text-label-sm text-primary font-semibold">78%</span></div><div class="w-full h-1.5 rounded-full bg-outline-variant overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 78%"></div></div><span class="font-label-sm text-label-sm text-on-surface-variant">Orçamento sob controle</span></div><div class="flex items-center justify-between px-2 pt-2 text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">help_outline</span><span class="font-label-sm text-label-sm">Suporte do Casal</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">settings</span><span class="font-label-sm text-label-sm">Ajustes</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-8 flex items-center justify-between"><div class="flex items-center gap-4"><div class="bg-surface-container p-1 rounded-full flex items-center gap-1 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">join_inner</span>Visão Conjunta (NósDois)</button><button class="px-3.5 py-1.5 rounded-full text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium transition-all">Lucas</button><button class="px-3.5 py-1.5 rounded-full text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium transition-all">Beatriz</button></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold rounded-xl transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-lg">add</span><span>Nova Despesa / Receita</span></button><div class="h-6 w-px bg-outline-variant"></div><button class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lucas & Beatriz</span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Premium Ativo</span></div><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB1vnKOtX_iO5sUDmdfKAcIq_M1yYauB2WXtZ49aMFLhsgW6uKYiWwH1zQS3ionBlTITIDZ6kje1r2WK5K9kyC0J_yZADbkyh5rl3nMcZKUennrHSuWY5V0zqjy2LlejOWrv2NRu_pJ-y51kAyZs6APigOWVdjbS0SA4wBwlHjFksvGU6h4hfdMCvhCLCvJncpacsl8hXm75j-bJ-NmEyt38q4M5NDKlx_oxbsuwguCnctFvS4gRHYPw"/></div></div></header><main class="relative pt-20 flex-1 bg-surface w-full px-8 pb-16"><div class="flex flex-col w-full">
+<!-- Top Stats Strip / Totais Consolidados do Mês -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Despesas Filtradas</span>
+<span class="font-currency-display text-currency-display text-error mt-0.5" id="metric-expenses">R$ 5.842,50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm text-error">trending_down</span> 14 lançamentos no período
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl">arrow_outward</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Receitas do Mês</span>
+<span class="font-currency-display text-currency-display text-primary-container mt-0.5">R$ 14.800,00</span>
+<span class="font-body-sm text-body-sm text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> Lucas 58% | Beatriz 42%
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/60 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">south_west</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Impacto Compartilhado (50/50)</span>
+<span class="font-currency-display text-currency-display text-on-surface mt-0.5">R$ 3.920,00</span>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">balance</span> R$ 1.960,00 por parceiro
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">group</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Acerto Entre Vocês</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-tertiary-container font-bold">Lucas deve</span>
+<span class="font-headline-md text-headline-md text-tertiary font-bold">R$ 215,80</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span> Pronto para compensar via PIX
+        </span>
+</div>
+<button class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary hover:bg-tertiary-container hover:text-on-tertiary transition-all" onclick="triggerQuickSettle()">
+<span class="material-symbols-outlined text-2xl">sync_alt</span>
+</button>
+</div>
+</section>
+<!-- Dual Column Functional Workspace: Left (Form & Categories) | Right (Filters & Rich Table) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: Formulário de Lançamento & Gerenciador de Categorias (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Card Formulário -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-6 relative">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg" id="form-icon">add_task</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="form-title">Nova Despesa</h2>
+<p class="font-body-sm text-body-sm text-secondary" id="form-subtitle">Cadastre despesas individuais ou a dois</p>
+</div>
+</div>
+<span class="hidden px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold" id="form-badge-mode">Modo Edição</span>
+</div>
+<form class="mt-4 flex flex-col gap-4" id="expense-form" onsubmit="event.preventDefault(); handleSaveExpense();">
+<!-- Input ID Hidden para Edição -->
+<input id="entry-id" type="hidden" value=""/>
+<!-- Descrição -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="desc">
+              Descrição da Despesa
+              <span class="text-secondary font-normal text-xs">Ex: Jantar Comemorativo</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-lg">edit_note</span>
+<input class="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="desc" placeholder="Ex: Supermercado Mensal Pão de Açúcar" required="" type="text"/>
+</div>
+</div>
+<!-- Valor e Data lado a lado -->
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="amount">Valor (R$)</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-md text-label-md font-semibold text-secondary">R$</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-headline-sm text-headline-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-semibold" id="amount" placeholder="0,00" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="date">Data</label>
+<input class="w-full px-3 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="date" required="" type="date" value="2024-05-18"/>
+</div>
+</div>
+<!-- Quem pagou? (Seleção Visual de Fotos / Identidades) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Quem pagou?</label>
+<div class="grid grid-cols-3 gap-2" id="payer-selector">
+<!-- Lucas -->
+<button class="payer-btn p-2.5 rounded-xl bg-surface-container-high/60 flex flex-col items-center justify-center gap-1.5 transition-all text-on-surface hover:bg-surface-container-high" data-payer="lucas" onclick="selectPayer('lucas')" type="button">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary-container font-headline-sm text-headline-sm font-bold">
+                  L
+                </div>
+<span class="font-label-sm text-label-sm font-semibold">Lucas</span>
+</button>
+<!-- Beatriz -->
+<button class="payer-btn p-2.5 rounded-xl bg-surface-container-high/60 flex flex-col items-center justify-center gap-1.5 transition-all text-on-surface hover:bg-surface-container-high" data-payer="beatriz" onclick="selectPayer('beatriz')" type="button">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary-container font-headline-sm text-headline-sm font-bold">
+                  B
+                </div>
+<span class="font-label-sm text-label-sm font-semibold">Beatriz</span>
+</button>
+<!-- Conta Conjunta -->
+<button class="payer-btn active p-2.5 rounded-xl bg-primary-container text-on-primary flex flex-col items-center justify-center gap-1.5 transition-all shadow-sm" data-payer="conjunta" onclick="selectPayer('conjunta')" type="button">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-base">diversity_1</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold">Conjunta</span>
+</button>
+</div>
+</div>
+<!-- Divisão da Despesa -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Regra de Divisão</label>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold" id="split-percentage-label">50% Lucas / 50% Bia</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 bg-surface-container-low p-1 rounded-xl">
+<button class="split-rule-btn py-1.5 px-2 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm font-semibold text-primary-container shadow-sm transition-all text-center" data-split="50_50" onclick="setSplitRule('50_50')" type="button">
+                50% / 50% Paritário
+              </button>
+<button class="split-rule-btn py-1.5 px-2 rounded-lg font-label-sm text-label-sm font-medium text-secondary hover:text-on-surface transition-all text-center" data-split="proportional" onclick="setSplitRule('proportional')" type="button">
+                Proporcional (58/42)
+              </button>
+<button class="split-rule-btn py-1.5 px-2 rounded-lg font-label-sm text-label-sm font-medium text-secondary hover:text-on-surface transition-all text-center" data-split="100_lucas" onclick="setSplitRule('100_lucas')" type="button">
+                100% Lucas
+              </button>
+<button class="split-rule-btn py-1.5 px-2 rounded-lg font-label-sm text-label-sm font-medium text-secondary hover:text-on-surface transition-all text-center" data-split="100_bia" onclick="setSplitRule('100_bia')" type="button">
+                100% Beatriz
+              </button>
+</div>
+</div>
+<!-- Categoria & Forma de Pagamento -->
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="category">Categoria</label>
+<select class="w-full px-3 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="category">
+<option value="Moradia">🏡 Moradia</option>
+<option selected="" value="Supermercado">🛒 Supermercado</option>
+<option value="Restaurantes">🍷 Restaurantes</option>
+<option value="Lazer & Viagens">✈️ Lazer & Viagens</option>
+<option value="Saúde & Bem-estar">🩺 Saúde</option>
+<option value="Assinaturas">📱 Assinaturas</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="payment-method">Forma de Pagto.</label>
+<select class="w-full px-3 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="payment-method">
+<option value="Cartão Black Duo">💳 Cartão Black Duo</option>
+<option value="Cartão Nubank Bia">💳 Nubank Bia</option>
+<option value="Cartão XP Lucas">💳 XP Lucas</option>
+<option value="PIX Compartilhado">⚡ PIX Conta Duo</option>
+<option value="Débito Automático">🏦 Débito Conta</option>
+</select>
+</div>
+</div>
+<!-- Recorrente Toggle & Upload de Comprovante Fake -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary">repeat</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Despesa Recorrente?</span>
+<span class="font-body-sm text-body-sm text-secondary">Repetir mensalmente</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="is-recurrent" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Botões de Ação do Form -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-3 px-4 bg-primary-container text-on-primary hover:bg-primary rounded-xl font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2" id="btn-submit" type="submit">
+<span class="material-symbols-outlined text-lg">check</span>
+<span id="btn-submit-text">Salvar Despesa</span>
+</button>
+<button class="hidden py-3 px-3 bg-surface-container-high hover:bg-surface-container-highest text-secondary rounded-xl font-label-md text-label-md font-semibold transition-all" id="btn-cancel-edit" onclick="resetFormToNew()" title="Cancelar edição" type="button">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Painel Gerenciador de Categorias & Tetos Orçamentários -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tetos por Categoria</h2>
+<p class="font-body-sm text-body-sm text-secondary">Gestão de limites mensais compartilhados</p>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary-container hover:bg-primary-fixed font-label-sm text-label-sm font-semibold transition-all" onclick="toggleNewCategoryModal()">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Nova</span>
+</button>
+</div>
+<div class="flex flex-col gap-3" id="categories-list">
+<!-- Moradia -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-secondary-container text-secondary flex items-center justify-center text-base">🏡</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Moradia</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Teto: R$ 3.500</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 82%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Gasto R$ 2.870,00</span>
+<span class="text-primary-container font-semibold">Restam R$ 630</span>
+</div>
+</div>
+<!-- Supermercado -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center text-base">🛒</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Supermercado</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Teto: R$ 2.500</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 54%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Gasto R$ 1.350,00</span>
+<span class="text-primary-container font-semibold">Restam R$ 1.150</span>
+</div>
+</div>
+<!-- Restaurantes -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-error-container/40 text-error flex items-center justify-center text-base">🍷</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Restaurantes</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Teto: R$ 1.200</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 95%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Gasto R$ 1.140,00</span>
+<span class="text-error font-semibold">Atenção (95%)</span>
+</div>
+</div>
+<!-- Lazer & Viagens -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center text-base">✈️</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Lazer & Viagens</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Teto: R$ 1.500</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 32%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Gasto R$ 482,50</span>
+<span class="text-primary-container font-semibold">Livre R$ 1.017,50</span>
+</div>
+</div>
+</div>
+<!-- Inline Mini-form to Add Category (Hidden by default) -->
+<div class="hidden mt-2 p-3 bg-surface-container-high rounded-xl flex-col gap-2" id="new-cat-box">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Adicionar Nova Categoria</span>
+<button class="text-secondary hover:text-on-surface" onclick="toggleNewCategoryModal()"><span class="material-symbols-outlined text-sm">close</span></button>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<input class="px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none" id="new-cat-name" placeholder="Nome da Categoria" type="text"/>
+<input class="px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none" id="new-cat-budget" placeholder="Teto R$" type="number"/>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold" onclick="addCustomCategory()" type="button">Salvar Categoria</button>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: Filtros Avançados + Tabela Rica de Lançamentos (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<!-- Filter Bar -->
+<section class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Lançamentos do Mês</span>
+</div>
+<!-- Quick Search -->
+<div class="relative flex items-center min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-base">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" id="filter-search" oninput="applyFilters()" placeholder="Buscar por descrição..." type="text"/>
+</div>
+</div>
+<!-- Filter Pills & Multi-selectors -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 border-t border-surface-container">
+<!-- Filtro Pagador -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Quem Pagou</span>
+<select class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none" id="filter-payer" onchange="applyFilters()">
+<option value="all">Todos Pagadores</option>
+<option value="lucas">Lucas</option>
+<option value="beatriz">Beatriz</option>
+<option value="conjunta">Conta Conjunta</option>
+</select>
+</div>
+<!-- Filtro Categoria -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Categoria</span>
+<select class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none" id="filter-cat" onchange="applyFilters()">
+<option value="all">Todas Categorias</option>
+<option value="Moradia">Moradia</option>
+<option value="Supermercado">Supermercado</option>
+<option value="Restaurantes">Restaurantes</option>
+<option value="Lazer & Viagens">Lazer & Viagens</option>
+</select>
+</div>
+<!-- Filtro Tipo (Entrada / Saída) -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Fluxo</span>
+<select class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none" id="filter-type" onchange="applyFilters()">
+<option value="all">Todos Fluxos</option>
+<option value="despesa">Somente Despesas</option>
+<option value="receita">Somente Receitas</option>
+</select>
+</div>
+<!-- Filtro Pagamento -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Método</span>
+<select class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none" id="filter-payment" onchange="applyFilters()">
+<option value="all">Todos Métodos</option>
+<option value="Cartão Black Duo">Cartão Black Duo</option>
+<option value="Cartão Nubank Bia">Nubank Bia</option>
+<option value="Cartão XP Lucas">XP Lucas</option>
+<option value="PIX Compartilhado">PIX Compartilhado</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Table Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 text-secondary font-label-sm text-label-sm uppercase">
+<th class="py-3 px-4">Lançamento & Categoria</th>
+<th class="py-3 px-4">Pagador</th>
+<th class="py-3 px-4">Divisão Acordada</th>
+<th class="py-3 px-4">Meio / Data</th>
+<th class="py-3 px-4 text-right">Valor</th>
+<th class="py-3 px-4 text-center">Ações</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-surface-container" id="transactions-table-body">
+<!-- Linha 1: Jantar Aniversário -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-cat="Restaurantes" data-id="tx-1" data-payer="lucas" data-payment="Cartão Black Duo" data-type="despesa">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-error-container/40 text-error flex items-center justify-center font-bold">
+                      🍷
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary-container transition-colors">Jantar Aniversário de Namoro</span>
+<span class="font-label-sm text-label-sm text-secondary">Restaurantes • Fazano Bistrô</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Lucas
+                  </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed/80 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">join_right</span> 50% Lucas / 50% Bia
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Cartão Black Duo</span>
+<span class="font-label-sm text-label-sm text-secondary">16 Mai 2024</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-bold text-error">- R$ 480,00</span>
+<span class="font-label-sm text-label-sm text-secondary">Bia deve R$ 240,00</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-all" onclick="previewReceipt('Comprovante Fazano Bistrô - R$ 480,00')" title="Ver Comprovante Anexo">
+<span class="material-symbols-outlined text-lg">receipt</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-primary-fixed hover:text-primary-container transition-all" onclick="editTransaction('tx-1')" title="Editar Lançamento">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-error-container hover:text-error transition-all" onclick="deleteTransaction('tx-1')" title="Excluir Lançamento">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 2: Supermercado Semanal -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-cat="Supermercado" data-id="tx-2" data-payer="conjunta" data-payment="Cartão Black Duo" data-type="despesa">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-primary flex items-center justify-center font-bold">
+                      🛒
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary-container transition-colors">Compras Semanal Orgânicos</span>
+<span class="font-label-sm text-label-sm text-secondary">Supermercado • Hortifruti Natural</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Conjunta
+                  </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">pie_chart</span> Proporcional (58/42)
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Cartão Black Duo</span>
+<span class="font-label-sm text-label-sm text-secondary">15 Mai 2024</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-bold text-error">- R$ 642,80</span>
+<span class="font-label-sm text-label-sm text-secondary">L: R$ 372,82 | B: R$ 269,98</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-all" onclick="previewReceipt('NFC-e Hortifruti Natural da Terra - R$ 642,80')" title="Ver Comprovante Anexo">
+<span class="material-symbols-outlined text-lg">receipt</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-primary-fixed hover:text-primary-container transition-all" onclick="editTransaction('tx-2')" title="Editar Lançamento">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-error-container hover:text-error transition-all" onclick="deleteTransaction('tx-2')" title="Excluir Lançamento">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 3: Aluguel e Condomínio (Recorrente) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-cat="Moradia" data-id="tx-3" data-payer="lucas" data-payment="Débito Automático" data-type="despesa">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-secondary-container text-secondary flex items-center justify-center font-bold">
+                      🏡
+                    </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary-container transition-colors">Aluguel + Condomínio Pinheiros</span>
+<span class="material-symbols-outlined text-xs text-primary-container" title="Recorrente mensal">sync</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Moradia • QuintoAndar</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Lucas
+                  </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed/80 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">join_right</span> 50% Lucas / 50% Bia
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Débito Automático</span>
+<span class="font-label-sm text-label-sm text-secondary">10 Mai 2024</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-bold text-error">- R$ 2.870,00</span>
+<span class="font-label-sm text-label-sm text-secondary">Bia deve R$ 1.435,00</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-all" onclick="previewReceipt('Boleto QuintoAndar Pago - R$ 2.870,00')" title="Ver Comprovante Anexo">
+<span class="material-symbols-outlined text-lg">receipt</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-primary-fixed hover:text-primary-container transition-all" onclick="editTransaction('tx-3')" title="Editar Lançamento">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-error-container hover:text-error transition-all" onclick="deleteTransaction('tx-3')" title="Excluir Lançamento">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 4: Curso Beatriz (Individual 100% Beatriz) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-cat="Lazer & Viagens" data-id="tx-4" data-payer="beatriz" data-payment="Cartão Nubank Bia" data-type="despesa">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold">
+                      🎨
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary-container transition-colors">Workshop Cerâmica & Design</span>
+<span class="font-label-sm text-label-sm text-secondary">Individual Beatriz • Studio Barro</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Beatriz
+                  </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">person</span> 100% Beatriz
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Cartão Nubank Bia</span>
+<span class="font-label-sm text-label-sm text-secondary">08 Mai 2024</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-bold text-error">- R$ 349,70</span>
+<span class="font-label-sm text-label-sm text-secondary">Sem acerto (Individual)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-all" onclick="previewReceipt('Recibo Workshop - R$ 349,70')" title="Ver Comprovante Anexo">
+<span class="material-symbols-outlined text-lg">receipt</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-primary-fixed hover:text-primary-container transition-all" onclick="editTransaction('tx-4')" title="Editar Lançamento">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-error-container hover:text-error transition-all" onclick="deleteTransaction('tx-4')" title="Excluir Lançamento">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 5: Passagens Aéreas Férias Noronha -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-cat="Lazer & Viagens" data-id="tx-5" data-payer="beatriz" data-payment="Cartão Black Duo" data-type="despesa">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold">
+                      ✈️
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary-container transition-colors">Passagens Aéreas Noronha (Sinal)</span>
+<span class="font-label-sm text-label-sm text-secondary">Lazer & Viagens • Gol Linhas Aéreas</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Beatriz
+                  </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed/80 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">join_right</span> 50% Lucas / 50% Bia
+                  </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Cartão Black Duo</span>
+<span class="font-label-sm text-label-sm text-secondary">02 Mai 2024</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-bold text-error">- R$ 1.500,00</span>
+<span class="font-label-sm text-label-sm text-primary-container font-medium">Lucas deve R$ 750,00</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-all" onclick="previewReceipt('E-Ticket GOL Reserva #ND8912')" title="Ver Comprovante Anexo">
+<span class="material-symbols-outlined text-lg">receipt</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-primary-fixed hover:text-primary-container transition-all" onclick="editTransaction('tx-5')" title="Editar Lançamento">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-error-container hover:text-error transition-all" onclick="deleteTransaction('tx-5')" title="Excluir Lançamento">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Totalizer Strip -->
+<div class="p-4 bg-surface-container-low flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 text-secondary font-label-sm text-label-sm">
+<span>Exibindo <b class="text-on-surface" id="visible-count">5</b> de 14 lançamentos</span>
+<span class="h-3 w-px bg-outline-variant"></span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Sincronizado com bancos</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Subtotal Filtrado:</span>
+<span class="font-headline-sm text-headline-sm font-bold text-error" id="filter-subtotal">R$ 5.842,50</span>
+</div>
+</div>
+</section>
+<!-- Resumo de Equilíbrio & Acerto Mensal (Visual Widget) -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Compensação Amigável NósDois</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Considerando gastos pagos por Lucas (R$ 3.350,00) e Beatriz (R$ 1.849,70) nas despesas compartilhadas deste mês.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-initial px-5 py-2.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2" onclick="openSettleModal()">
+<span class="material-symbols-outlined text-lg">paid</span>
+<span>Gerar Acerto PIX</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-12 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3" id="toast">
+<span class="material-symbols-outlined text-primary-fixed" id="toast-icon">check_circle</span>
+<span class="font-body-md text-body-md font-medium" id="toast-message">Operação realizada com sucesso!</span>
+</div>
+<!-- Modal Fake de Comprovante -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center p-4" id="receipt-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-md w-full p-6 shadow-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-surface-container pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">receipt_long</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Comprovante Fiscal Anexo</span>
+</div>
+<button class="text-secondary hover:text-on-surface" onclick="closeReceiptModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low flex flex-col items-center justify-center text-center gap-3">
+<span class="material-symbols-outlined text-5xl text-primary-container">task</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface" id="modal-receipt-title">Comprovante</span>
+<span class="font-body-sm text-body-sm text-secondary">Documento verificado e arquivado na nuvem NósDois</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Hash SHA256: e82b...9a01</span>
+<span>Autenticado via Open Finance</span>
+</div>
+<button class="w-full py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-xl font-label-md text-label-md font-semibold transition-all" onclick="closeReceiptModal()">
+        Fechar Visualização
+      </button>
+</div>
+</div>
+</div>
+<script>
+  // State representation
+  let currentSplit = '50_50';
+  let currentPayer = 'conjunta';
+
+  const mockData = {
+    'tx-1': {
+      desc: 'Jantar Aniversário de Namoro',
+      amount: '480,00',
+      date: '2024-05-16',
+      payer: 'lucas',
+      split: '50_50',
+      category: 'Restaurantes',
+      payment: 'Cartão Black Duo',
+      recurrent: false
+    },
+    'tx-2': {
+      desc: 'Compras Semanal Orgânicos',
+      amount: '642,80',
+      date: '2024-05-15',
+      payer: 'conjunta',
+      split: 'proportional',
+      category: 'Supermercado',
+      payment: 'Cartão Black Duo',
+      recurrent: false
+    },
+    'tx-3': {
+      desc: 'Aluguel + Condomínio Pinheiros',
+      amount: '2.870,00',
+      date: '2024-05-10',
+      payer: 'lucas',
+      split: '50_50',
+      category: 'Moradia',
+      payment: 'Débito Automático',
+      recurrent: true
+    },
+    'tx-4': {
+      desc: 'Workshop Cerâmica & Design',
+      amount: '349,70',
+      date: '2024-05-08',
+      payer: 'beatriz',
+      split: '100_bia',
+      category: 'Lazer & Viagens',
+      payment: 'Cartão Nubank Bia',
+      recurrent: false
+    },
+    'tx-5': {
+      desc: 'Passagens Aéreas Noronha (Sinal)',
+      amount: '1.500,00',
+      date: '2024-05-02',
+      payer: 'beatriz',
+      split: '50_50',
+      category: 'Lazer & Viagens',
+      payment: 'Cartão Black Duo',
+      recurrent: false
+    }
+  };
+
+  // Selector handlers
+  function selectPayer(payer) {
+    currentPayer = payer;
+    const buttons = document.querySelectorAll('.payer-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-payer') === payer) {
+        btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        btn.classList.remove('bg-surface-container-high/60', 'text-on-surface');
+      } else {
+        btn.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        btn.classList.add('bg-surface-container-high/60', 'text-on-surface');
+      }
+    });
+  }
+
+  function setSplitRule(rule) {
+    currentSplit = rule;
+    const buttons = document.querySelectorAll('.split-rule-btn');
+    const label = document.getElementById('split-percentage-label');
+    
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-split') === rule) {
+        btn.classList.add('bg-surface-container-lowest', 'text-primary-container', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('font-medium', 'text-secondary');
+      } else {
+        btn.classList.remove('bg-surface-container-lowest', 'text-primary-container', 'shadow-sm', 'font-semibold');
+        btn.classList.add('font-medium', 'text-secondary');
+      }
+    });
+
+    if (rule === '50_50') label.innerText = '50% Lucas / 50% Bia';
+    else if (rule === 'proportional') label.innerText = '58% Lucas / 42% Bia';
+    else if (rule === '100_lucas') label.innerText = '100% Lucas (Sem acerto)';
+    else if (rule === '100_bia') label.innerText = '100% Beatriz (Sem acerto)';
+  }
+
+  // Edit Transaction Flow
+  function editTransaction(id) {
+    const item = mockData[id];
+    if (!item) return;
+
+    // Fill form
+    document.getElementById('entry-id').value = id;
+    document.getElementById('desc').value = item.desc;
+    document.getElementById('amount').value = item.amount;
+    document.getElementById('date').value = item.date;
+    document.getElementById('category').value = item.category;
+    document.getElementById('payment-method').value = item.payment;
+    document.getElementById('is-recurrent').checked = item.recurrent;
+    
+    selectPayer(item.payer);
+    setSplitRule(item.split);
+
+    // Update form header & CTA text
+    document.getElementById('form-title').innerText = 'Editar Lançamento';
+    document.getElementById('form-subtitle').innerText = 'Atualize os detalhes da despesa compartilhada';
+    document.getElementById('form-icon').innerText = 'edit';
+    document.getElementById('form-badge-mode').classList.remove('hidden');
+    document.getElementById('btn-submit-text').innerText = 'Atualizar Lançamento';
+    document.getElementById('btn-cancel-edit').classList.remove('hidden');
+
+    // Scroll slightly to form on mobile/smaller screens
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+    showToast('Carregando lançamento para edição...');
+  }
+
+  function resetFormToNew() {
+    document.getElementById('entry-id').value = '';
+    document.getElementById('expense-form').reset();
+    document.getElementById('date').value = '2024-05-18';
+    
+    selectPayer('conjunta');
+    setSplitRule('50_50');
+
+    document.getElementById('form-title').innerText = 'Nova Despesa';
+    document.getElementById('form-subtitle').innerText = 'Cadastre despesas individuais ou a dois';
+    document.getElementById('form-icon').innerText = 'add_task';
+    document.getElementById('form-badge-mode').classList.add('hidden');
+    document.getElementById('btn-submit-text').innerText = 'Salvar Despesa';
+    document.getElementById('btn-cancel-edit').classList.add('hidden');
+  }
+
+  function handleSaveExpense() {
+    const isEdit = document.getElementById('entry-id').value !== '';
+    const desc = document.getElementById('desc').value;
+    const amount = document.getElementById('amount').value;
+
+    if (!desc || !amount) {
+      alert('Por favor, preencha a descrição e o valor da despesa.');
+      return;
+    }
+
+    if (isEdit) {
+      showToast('Lançamento atualizado com sucesso!');
+    } else {
+      showToast('Nova despesa cadastrada e compartilhada com sucesso!');
+    }
+
+    resetFormToNew();
+  }
+
+  function deleteTransaction(id) {
+    if (confirm('Deseja realmente remover esta despesa do histórico compartilhado?')) {
+      const row = document.querySelector(`tr[data-id="${id}"]`);
+      if (row) {
+        row.remove();
+        showToast('Despesa excluída com sucesso.');
+        recalcTotals();
+      }
+    }
+  }
+
+  function applyFilters() {
+    const searchVal = document.getElementById('filter-search').value.toLowerCase();
+    const payerVal = document.getElementById('filter-payer').value;
+    const catVal = document.getElementById('filter-cat').value;
+    const typeVal = document.getElementById('filter-type').value;
+    const payMethodVal = document.getElementById('filter-payment').value;
+
+    const rows = document.querySelectorAll('#transactions-table-body tr');
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+      const rowPayer = row.getAttribute('data-payer');
+      const rowCat = row.getAttribute('data-cat');
+      const rowType = row.getAttribute('data-type');
+      const rowPayment = row.getAttribute('data-payment');
+      const rowText = row.innerText.toLowerCase();
+
+      const matchSearch = rowText.includes(searchVal);
+      const matchPayer = payerVal === 'all' || rowPayer === payerVal;
+      const matchCat = catVal === 'all' || rowCat === catVal;
+      const matchType = typeVal === 'all' || rowType === typeVal;
+      const matchPayment = payMethodVal === 'all' || rowPayment === payMethodVal;
+
+      if (matchSearch && matchPayer && matchCat && matchType && matchPayment) {
+        row.style.display = '';
+        visibleCount++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    document.getElementById('visible-count').innerText = visibleCount;
+  }
+
+  function recalcTotals() {
+    const rows = document.querySelectorAll('#transactions-table-body tr');
+    document.getElementById('visible-count').innerText = rows.length;
+  }
+
+  function toggleNewCategoryModal() {
+    const box = document.getElementById('new-cat-box');
+    box.classList.toggle('hidden');
+    box.classList.toggle('flex');
+  }
+
+  function addCustomCategory() {
+    const name = document.getElementById('new-cat-name').value;
+    const budget = document.getElementById('new-cat-budget').value;
+    if (!name || !budget) {
+      alert('Informe o nome e o teto da categoria.');
+      return;
+    }
+
+    const list = document.getElementById('categories-list');
+    const newDiv = document.createElement('div');
+    newDiv.className = 'p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2';
+    newDiv.innerHTML = `
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-surface-container text-on-surface flex items-center justify-center text-base">🔖</span>
+          <span class="font-label-md text-label-md font-semibold text-on-surface">${name}</span>
+        </div>
+        <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Teto: R$ ${budget}</span>
+      </div>
+      <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+        <div class="h-full bg-primary-container rounded-full" style="width: 5%"></div>
+      </div>
+      <div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+        <span>Gasto R$ 0,00</span>
+        <span class="text-primary-container font-semibold">Teto Disponível</span>
+      </div>
+    `;
+    list.prepend(newDiv);
+
+    // Adiciona opção ao select do formulário
+    const select = document.getElementById('category');
+    const opt = document.createElement('option');
+    opt.value = name;
+    opt.text = `🔖 ${name}`;
+    select.add(opt);
+
+    toggleNewCategoryModal();
+    showToast(`Categoria "${name}" criada com teto de R$ ${budget}!`);
+  }
+
+  function previewReceipt(title) {
+    document.getElementById('modal-receipt-title').innerText = title;
+    document.getElementById('receipt-modal').classList.remove('hidden');
+  }
+
+  function closeReceiptModal() {
+    document.getElementById('receipt-modal').classList.add('hidden');
+  }
+
+  function triggerQuickSettle() {
+    showToast('PIX Copia e Cola gerado para Beatriz: R$ 215,80');
+  }
+
+  function openSettleModal() {
+    showToast('Calculando fechamento compartilhado do mês...');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    toastMsg.innerText = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+</script></main><footer class="fixed bottom-0 left-72 right-0 h-10 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 px-8 flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary-container">lock</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sincronização bancária segura e criptografada (Open Finance Brasil)</span><span class="w-1.5 h-1.5 rounded-full bg-primary-container ml-1"></span><span class="font-label-sm text-label-sm text-primary-container font-semibold">Atualizado há 4 min</span></div><div class="flex items-center gap-6"><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Auditoria Conjunta</span><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Exportar Relatório</span><span class="font-label-sm text-label-sm text-secondary hover:text-on-surface cursor-pointer">Privacidade 50/50</span></div></footer></div></body></html>
